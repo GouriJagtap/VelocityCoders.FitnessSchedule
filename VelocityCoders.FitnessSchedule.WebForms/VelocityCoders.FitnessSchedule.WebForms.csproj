@@ -285,10 +285,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Jagtap.Common\Jagtap.Common\Jagtap.Common.csproj">
-      <Project>{aacf6da2-8bb4-4620-840a-e622a78ebd41}</Project>
-      <Name>Jagtap.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VelocityCoders.FitnessSchedule.DAL\VelocityCoders.FitnessSchedule.DAL.csproj">
       <Project>{befc9ab0-882c-47f0-9275-1d3e207f528d}</Project>
       <Name>VelocityCoders.FitnessSchedule.DAL</Name>
