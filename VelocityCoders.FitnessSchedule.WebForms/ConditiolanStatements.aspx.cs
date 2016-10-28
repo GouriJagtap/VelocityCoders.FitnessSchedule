@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using VelocityCoders.LotteryGame.WebForms;
 
 namespace VelocityCoders.FitnessSchedule.WebForms
 {

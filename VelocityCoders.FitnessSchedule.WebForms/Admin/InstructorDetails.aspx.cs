@@ -33,9 +33,9 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin
                   
                      lblInstructorId.Text = instructorLookup.InstructorId.ToString();
                     lblPersonId.Text = instructorLookup.PersonId.ToString();
-                    lblHireDate.Text = instructorLookup.HireDate.ToString();
-                    lblTermDate.Text = instructorLookup.TermDate.ToString();
-                    lblCreateDate.Text = instructorLookup.CreateDate.ToString();
+                    lblHireDate.Text = instructorLookup.HireDate.ToShortDateString();
+                    lblTermDate.Text = instructorLookup.TermDate.ToShortDateString();
+                    lblCreateDate.Text = instructorLookup.CreateDate.ToShortDateString();
                 }
                 else
                     lblMessage.Text = "Instructor could not be found.";

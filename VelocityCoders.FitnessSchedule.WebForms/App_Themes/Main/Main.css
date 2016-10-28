@@ -1,0 +1,124 @@
+﻿body {
+}
+    .form
+    {
+        text-align:center;
+        font:normal 12px/150% Arial, Helnetica, sans-serif;
+        background: #ffffff;
+        overflow: hidden;      
+        width: 50%; 
+        border-style: solid;
+        border-color:black;
+    }
+
+.datagrid
+    {
+        border:1px solid #0026ff; 
+            
+    }
+.datagrid table
+    {
+        border-collapse:collapse;
+        text-align:left;
+        width:100%;
+    }
+.datagrid table td, .datagrid table th
+    {
+        padding:5px 10px;
+    }
+.datagrid table thead th
+    {   
+        text-align:center;
+        background-color:#0094ff;
+        color:#ffffff;
+        font-size:1.25em;
+        font-weight:bold;
+    }
+.datagrid table tbody td
+    {
+        font-size: 1em;
+        border-bottom:1px solid #006699;
+        font-weight: normal;  
+    }
+.datagrid table tbody tr:last-child td
+    {
+        border-bottom: none;
+    }
+    .datagrid caption
+        {
+            font-weight:bold;
+            font-size: 2em;
+            padding: 10px 10px;
+            color:blue;
+        }
+
+    /*Using Elements 
+        table,tr
+       {
+           border: 1px solid darkgreen;
+       }
+       td
+       {
+           border:1Px solid red;
+       }
+       td.orangeBorder
+       {
+           border:2Px solid Pink;
+       }
+        .greenBorder
+        {
+             border: 1px solid darkgreen;
+           // border-collapse: collapse;
+        }
+        .blueBorder
+        {
+             border:1px solid lightblue;
+        }
+
+        .redBorder
+        {
+             border:1px solid pink;
+        }
+
+        .orangeBorder
+        {
+             border:1px solid darkorange;
+        }*/
+
+         /*#table
+        {
+            border: 1px solid green;
+            //border-collapse: collapse;
+           
+        }
+         #tr1
+        {
+            border:1px solid blue;
+           //  border-collapse:collapse;
+        }
+         #tr2
+         {
+             border:1px solid purple;
+         }
+         #tr3
+         {
+             border:1px solid purple;
+         }
+        #tr1td1
+        {
+             border:1px solid red;
+        }
+        #tr1td2
+        {
+             border:1px solid red;
+            
+        }
+        #tr2td1
+        {
+             border:1px solid orange;
+        }
+        #tr2td2
+        {
+             border:1px solid orange;
+        }*/
+

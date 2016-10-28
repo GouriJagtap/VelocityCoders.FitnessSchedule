@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jagtap.Common", "..\Jagtap.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessSchedule.Models", "VelocityCoders.FitnessSchedule.Models\VelocityCoders.FitnessSchedule.Models.csproj", "{B4C25311-4121-45CE-B175-70CDF01F4E52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.LotteryGame.WebForms", "..\..\LotteryGame\VelocityCoders.LotteryGame\VelocityCoders.LotteryGame.WebForms\VelocityCoders.LotteryGame.WebForms.csproj", "{46DE98DD-60BD-4D70-BA44-62DF92973899}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessSchedule.DAL", "VelocityCoders.FitnessSchedule.DAL\VelocityCoders.FitnessSchedule.DAL.csproj", "{BEFC9AB0-882C-47F0-9275-1D3E207F528D}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{B4C25311-4121-45CE-B175-70CDF01F4E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4C25311-4121-45CE-B175-70CDF01F4E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4C25311-4121-45CE-B175-70CDF01F4E52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46DE98DD-60BD-4D70-BA44-62DF92973899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46DE98DD-60BD-4D70-BA44-62DF92973899}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46DE98DD-60BD-4D70-BA44-62DF92973899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46DE98DD-60BD-4D70-BA44-62DF92973899}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BEFC9AB0-882C-47F0-9275-1D3E207F528D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BEFC9AB0-882C-47F0-9275-1D3E207F528D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEFC9AB0-882C-47F0-9275-1D3E207F528D}.Release|Any CPU.ActiveCfg = Release|Any CPU

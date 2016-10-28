@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminInput.aspx" />
     <Content Include="Admin\EmailDetails.aspx" />
     <Content Include="Admin\EmailList.aspx" />
     <Content Include="Admin\EntityTypeDetails.aspx" />
@@ -108,9 +109,12 @@
     <Content Include="Admin\InstructorList.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
+    <Content Include="App_Themes\Main\Main.css" />
     <Content Include="ArrayExample.aspx" />
     <Content Include="ConditiolanStatements.aspx" />
     <Content Include="D-04-Instance-vs-Static-LAB.aspx" />
+    <Content Include="HTMLIntro.aspx" />
+    <Content Include="Images\Agates.jpg" />
     <Content Include="LoopsExample.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -131,10 +135,18 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="StringTest.aspx" />
     <Content Include="TemperatureConversion.aspx" />
+    <Content Include="Thanks.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminInput.aspx.cs">
+      <DependentUpon>AdminInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminInput.aspx.designer.cs">
+      <DependentUpon>AdminInput.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EmailDetails.aspx.cs">
       <DependentUpon>EmailDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,6 +262,13 @@
     <Compile Include="HelloWorld1.aspx.designer.cs">
       <DependentUpon>HelloWorld1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HTMLIntro.aspx.cs">
+      <DependentUpon>HTMLIntro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLIntro.aspx.designer.cs">
+      <DependentUpon>HTMLIntro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoopsExample.aspx.cs">
       <DependentUpon>LoopsExample.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,6 +291,13 @@
     <Compile Include="TemperatureConversion.aspx.designer.cs">
       <DependentUpon>TemperatureConversion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Thanks.aspx.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Thanks.aspx.designer.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,6 +311,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Jagtap.Common\Jagtap.Common.csproj">
+      <Project>{aacf6da2-8bb4-4620-840a-e622a78ebd41}</Project>
+      <Name>Jagtap.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VelocityCoders.FitnessSchedule.DAL\VelocityCoders.FitnessSchedule.DAL.csproj">
       <Project>{befc9ab0-882c-47f0-9275-1d3e207f528d}</Project>
       <Name>VelocityCoders.FitnessSchedule.DAL</Name>

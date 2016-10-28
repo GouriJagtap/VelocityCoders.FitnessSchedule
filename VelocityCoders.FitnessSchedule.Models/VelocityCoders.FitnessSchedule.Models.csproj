@@ -64,6 +64,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Jagtap.Common\Jagtap.Common.csproj">
+      <Project>{aacf6da2-8bb4-4620-840a-e622a78ebd41}</Project>
+      <Name>Jagtap.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
