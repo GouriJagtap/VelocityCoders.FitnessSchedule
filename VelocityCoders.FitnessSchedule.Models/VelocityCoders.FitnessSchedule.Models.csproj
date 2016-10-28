@@ -65,7 +65,7 @@
     <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Jagtap.Common\Jagtap.Common.csproj">
+    <ProjectReference Include="..\Jagtap.Common\Jagtap.Common.csproj">
       <Project>{aacf6da2-8bb4-4620-840a-e622a78ebd41}</Project>
       <Name>Jagtap.Common</Name>
     </ProjectReference>

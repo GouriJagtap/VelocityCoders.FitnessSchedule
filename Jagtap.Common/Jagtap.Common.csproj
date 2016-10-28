@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BEFC9AB0-882C-47F0-9275-1D3E207F528D}</ProjectGuid>
+    <ProjectGuid>{AACF6DA2-8BB4-4620-840A-E622A78EBD41}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VelocityCoders.FitnessSchedule.DAL</RootNamespace>
-    <AssemblyName>VelocityCoders.FitnessSchedule.DAL</AssemblyName>
+    <RootNamespace>Jagtap.Common</RootNamespace>
+    <AssemblyName>Jagtap.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,23 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppConfiguration.cs" />
-    <Compile Include="EmailDAL.cs" />
-    <Compile Include="EntityTypeDAL.cs" />
-    <Compile Include="FitnessClassDAL.cs" />
-    <Compile Include="InstructorDAL.cs" />
-    <Compile Include="PersonDAL.cs" />
+    <Compile Include="BaseCollection.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Helpers\TemprratureConverter.cs" />
+    <Compile Include="Helpers\StateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Jagtap.Common\Jagtap.Common.csproj">
-      <Project>{aacf6da2-8bb4-4620-840a-e622a78ebd41}</Project>
-      <Name>Jagtap.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VelocityCoders.FitnessSchedule.Models\VelocityCoders.FitnessSchedule.Models.csproj">
-      <Project>{b4c25311-4121-45ce-b175-70cdf01f4e52}</Project>
-      <Name>VelocityCoders.FitnessSchedule.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
