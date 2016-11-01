@@ -61,6 +61,7 @@ namespace VelocityCoders.FitnessSchedule.Models
       
         public string DisplayFirstName { get; set; }
         public string Gender { get; set; }
+        public DateTime BirthDate { get; set; }
 
         
 

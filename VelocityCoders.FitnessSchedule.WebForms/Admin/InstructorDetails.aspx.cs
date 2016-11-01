@@ -33,6 +33,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin
                   
                      lblInstructorId.Text = instructorLookup.InstructorId.ToString();
                     lblPersonId.Text = instructorLookup.PersonId.ToString();
+                    lblEntityTypeId.Text = instructorLookup.EntityTypeId.ToString();
                     lblHireDate.Text = instructorLookup.HireDate.ToShortDateString();
                     lblTermDate.Text = instructorLookup.TermDate.ToShortDateString();
                     lblCreateDate.Text = instructorLookup.CreateDate.ToShortDateString();

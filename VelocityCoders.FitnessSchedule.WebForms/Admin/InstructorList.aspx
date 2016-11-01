@@ -19,6 +19,7 @@
                 <tr>
                     <td>InstructorId</td>
                     <td>PersonId</td>
+                    <td>EntityTypeId</td>
                     <td>Hire Date</td>
                     <td>Term Date</td>
                     <td>Create Date</td>
@@ -29,6 +30,7 @@
                 <tr>
                     <td><%# Eval("InstructorId")%></td>
                     <td><%# Eval("PersonID")%></td>
+                    <td><%# Eval("EntityTypeId")%></td>
                     <td><%# Eval("HireDate")%></td>
                     <td><%# Eval("TermDate")%></td>
                     <td><%# Eval("CreateDate")%></td>

@@ -20,6 +20,8 @@
         <br />
         <b>Person Id  :</b>  &nbsp; <asp:Label runat="server" ID="lblPersonId" />
         <br />
+        <b>EntityType Id  :</b>  &nbsp; <asp:Label runat="server" ID="lblEntityTypeId" />
+        <br />
         <b>Hire Date :</b>  &nbsp; <asp:Label runat="server" ID="lblHireDate" />
         <br />
         <b>Term Date :</b>  &nbsp; <asp:Label runat="server" ID="lblTermDate" />

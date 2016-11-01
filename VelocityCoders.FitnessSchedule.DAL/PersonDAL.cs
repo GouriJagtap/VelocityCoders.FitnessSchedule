@@ -67,6 +67,9 @@ namespace VelocityCoders.FitnessSchedule.DAL
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Gender")))
                 myObject.Gender = myDataRecord.GetString(myDataRecord.GetOrdinal("Gender"));
 
+            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Birthdate")))
+                myObject.BirthDate = myDataRecord.GetDateTime(myDataRecord.GetOrdinal("BirthDate"));
+
             return myObject;
         }
 

@@ -23,6 +23,7 @@
                     <td>LastName</td>
                     <td>DisplayFirstName</td>
                     <td>Gender</td>
+                    <td>BirthDate</td>
                     <td>&nbsp;</td>
                 </tr>
             </HeaderTemplate>
@@ -33,6 +34,7 @@
                     <td><%# Eval("LastName")%></td>
                     <td><%# Eval("DisplayFirstName")%></td>
                     <td><%# Eval("Gender")%></td>
+                     <td><%# Eval("BirthDate")%></td>
                     <td><a href='PersonDetails.aspx?PersonId=<%# Eval("PersonID") %>'>Details</a></td>
                 </tr>
             </ItemTemplate>

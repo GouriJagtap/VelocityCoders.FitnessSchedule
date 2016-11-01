@@ -26,6 +26,8 @@
         <b>Preferred Name : </b>  &nbsp; <asp:Label runat="server" ID="lblDisplayFirstName" />
         <br />
         <b>Gender : </b>  &nbsp; <asp:Label runat="server" ID="lblGender" />
+        <br />
+        <b>BirthDate : </b>  &nbsp; <asp:Label runat="server" ID="lblBirthDate" />
         </div>
         </form>
  

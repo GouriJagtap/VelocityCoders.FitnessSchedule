@@ -106,6 +106,7 @@
     <Content Include="Admin\FitnessClassList.aspx" />
     <Content Include="Admin\Index.aspx" />
     <Content Include="Admin\InstructorDetails.aspx" />
+    <Content Include="Admin\InstructorFolder\InstructorForm.aspx" />
     <Content Include="Admin\InstructorList.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
@@ -115,6 +116,7 @@
     <Content Include="D-04-Instance-vs-Static-LAB.aspx" />
     <Content Include="HTMLIntro.aspx" />
     <Content Include="Images\Agates.jpg" />
+    <Content Include="Images\header-logo.png" />
     <Content Include="LoopsExample.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -202,6 +204,13 @@
     </Compile>
     <Compile Include="Admin\InstructorDetails.aspx.designer.cs">
       <DependentUpon>InstructorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorForm.aspx.cs">
+      <DependentUpon>InstructorForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorForm.aspx.designer.cs">
+      <DependentUpon>InstructorForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\InstructorList.aspx.cs">
       <DependentUpon>InstructorList.aspx</DependentUpon>

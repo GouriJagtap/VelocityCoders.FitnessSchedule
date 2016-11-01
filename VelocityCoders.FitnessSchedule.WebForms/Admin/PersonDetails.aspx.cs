@@ -35,6 +35,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin
                     lblLastName.Text = personLookup.LastName;
                     lblDisplayFirstName.Text = personLookup.DisplayFirstName;
                     lblGender.Text = personLookup.Gender;
+                    lblBirthDate.Text = personLookup.BirthDate.ToString();
                 }
                 else
                     lblMessage.Text = "Person could not be found.";

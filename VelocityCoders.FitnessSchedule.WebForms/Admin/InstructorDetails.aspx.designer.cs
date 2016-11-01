@@ -49,6 +49,15 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin {
         protected global::System.Web.UI.WebControls.Label lblPersonId;
         
         /// <summary>
+        /// lblEntityTypeId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEntityTypeId;
+        
+        /// <summary>
         /// lblHireDate control.
         /// </summary>
         /// <remarks>
