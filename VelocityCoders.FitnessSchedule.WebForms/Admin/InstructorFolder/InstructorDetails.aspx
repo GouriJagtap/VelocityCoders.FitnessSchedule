@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorDetails.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorDetails" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorDetails.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorDetails" Theme="Theme" %>
 
 <!DOCTYPE html>
 

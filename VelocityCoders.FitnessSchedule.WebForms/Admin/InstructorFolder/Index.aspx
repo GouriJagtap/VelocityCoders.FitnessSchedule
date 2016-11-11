@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.Index"
+    Theme="Theme" %>
 
 <!DOCTYPE html>
 

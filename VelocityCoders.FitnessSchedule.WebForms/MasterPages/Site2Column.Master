@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" 
+    AutoEventWireup="true" 
+    CodeBehind="Site2Column.master.cs"
+    Inherits="VelocityCoders.FitnessSchedule.WebForms.MasterPages.Site2Column" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="Header">
+            <img src="../../Images/header-logo.png" />
+        </div>
+        <div id="Subheader">
+            <div class="Banner">
+                <h1 class="Banner-Text">Fitness Schedule Administration</h1>
+                <p> Tool to manage your fitness schedule application.</p>
+            </div>
+        </div>
+        <div id="Container">
+            <div id="NavigationContainer">
+                <div id="NavigationContainerContent">Left Navigation PlaceHolder</div>
+            </div>
+            <div id="BodyContainer">
+                <div id="BodyContainerContent">
+                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                     </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+       
+        <div id="Footer">
+              <div>&copy; Copyright 2016 - Velocity Coders</div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

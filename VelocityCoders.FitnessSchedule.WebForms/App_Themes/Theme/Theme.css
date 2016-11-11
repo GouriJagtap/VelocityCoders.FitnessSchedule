@@ -1,0 +1,110 @@
+﻿
+
+html {
+    font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+    font-size: 12px;
+    color:#4d4d4d;
+}
+
+body
+{
+width:980px;
+background-color:#f5f5f5;
+overflow:scroll;
+margin-top:0;
+margin-left:auto;
+margin-right:auto;
+}
+
+#Header,
+#Subheader,
+#Footer
+{
+    width:100%;
+}
+
+#Header{
+    height:65px;
+    background-color:#ffffff;
+}
+#Subheader{
+    background-color:#050506;
+    background-image: url('../images/background-banner.jpg');
+    background-repeat:no-repeat;
+    background-position:center top;
+    height:350px;
+}
+#Footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+
+    height:35px;
+    line-height:35px;
+    text-align:center;
+
+    color:#ACB2B8;
+    border-top: 1px solid #ACB2B8;
+}
+
+.Banner{
+    text-align:center;
+    width:100%;
+    max-width:980px;
+    padding-top:50px;
+}
+.Banner-Text,
+.Banner p{
+    text-shadow:0 1px 1px rgba(0,0,0,0.4);
+    color:#fff;
+}
+#Container{
+    background-color:transparent;
+    position:absolute;
+    top:200px;
+    width:978px;
+}
+#NavigationContainer{
+    width:200px;
+    float:left;
+    margin-left:20px;
+    margin-top:50px;
+}
+#NavigationContainerContent{
+    padding:10px;
+    background-color:#fff;
+    -webkit-border-radius:4px 4px 4px 4px;
+    border-radius:4px 4px 4px 4px;
+}
+#BodyContainer{
+    background-color:white;
+    margin-left:210px;
+    margin-right:20px;
+    margin-top:15px;
+    overflow:scroll;
+    width:auto;
+}
+
+#InstructorContainer table{
+    width:100%;
+}
+
+#InstructorContainer tabel label{
+    float:right;
+    padding-right:10px;
+}
+.SubheaderNavigation ul{
+    margin:0;
+    text-align:center;
+}
+.SubheaderNavigation li{
+    color:#808080;
+    display:inline;
+    padding:8px;
+}
+.SubheaderNavigation a{
+    color:#666666;
+}
+.SmallPadding{
+    padding:4px;
+}

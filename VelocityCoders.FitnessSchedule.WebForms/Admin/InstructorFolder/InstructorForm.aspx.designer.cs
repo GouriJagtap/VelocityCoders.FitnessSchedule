@@ -13,13 +13,13 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder {
     public partial class InstructorForm {
         
         /// <summary>
-        /// form1 control.
+        /// instructorNavigation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::VelocityCoders.FitnessSchedule.WebForms.UserControls.WebUserControl1 instructorNavigation;
         
         /// <summary>
         /// lblPageMessage control.

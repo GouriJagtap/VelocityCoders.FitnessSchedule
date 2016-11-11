@@ -12,12 +12,21 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblPageMessage.Text = DateTime.Now.ToLongTimeString();
-            txtFirstName.Text = "Default Value";
+           // lblPageMessage.Text = InstructorNavigation.InstructorForm.ToString();
+            instructorNavigation.CurrentNavigationLink = InstructorNavigation.InstructorForm;
+            this.BindInstructorNavigation();
+
+        }
+       
+        protected void Save_Click(object sender, EventArgs e)
+        {
+          //this.ProcessForm();
         }
         private void ProcessForm()
         {
             StringBuilder formValues = new StringBuilder();
+
+           
 
             string firstName = txtFirstName.Text;
             string preferedFirstName = txtPreferedFirstName.Text;
@@ -48,6 +57,18 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
             formValues.Append("Notes :" + notes);
             formValues.Append("<br />");
 
+            lblPageMessage.Text = formValues.ToString();
+
+        }
+
+        private void BindInstructorNavigation()
+        {
+            // Set custom user control for instructor subheader navigation
+            instructorNavigation.CurrentNavigationLink = InstructorNavigation.InstructorForm;
+
+            // for now - for testing purposes set to valid integer greater than 0
+
+            instructorNavigation.InstructorId = 1;
 
         }
     }

@@ -104,13 +104,19 @@
     <Content Include="Admin\EntityTypeList.aspx" />
     <Content Include="Admin\FitnessCLassDetails.aspx" />
     <Content Include="Admin\FitnessClassList.aspx" />
-    <Content Include="Admin\Index.aspx" />
-    <Content Include="Admin\InstructorDetails.aspx" />
+    <Content Include="Admin\InstructorFolder\ContactInfo.aspx" />
+    <Content Include="Admin\InstructorFolder\Index.aspx" />
+    <Content Include="Admin\InstructorFolder\InstructorDetails.aspx" />
     <Content Include="Admin\InstructorFolder\InstructorForm.aspx" />
+    <Content Include="Admin\InstructorFolder\InstructorList.aspx" />
     <Content Include="Admin\InstructorList.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
-    <Content Include="App_Themes\Main\Main.css" />
+    <Content Include="App_Themes\Images\background-banner.jpg" />
+    <Content Include="App_Themes\Images\header-logo.png" />
+    <Content Include="App_Themes\Theme\FormControls.css" />
+    <Content Include="App_Themes\Theme\main.css" />
+    <Content Include="App_Themes\Theme\Theme.css" />
     <Content Include="ArrayExample.aspx" />
     <Content Include="ConditiolanStatements.aspx" />
     <Content Include="D-04-Instance-vs-Static-LAB.aspx" />
@@ -122,6 +128,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="MasterPages\Site2Column.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,6 +145,7 @@
     <Content Include="StringTest.aspx" />
     <Content Include="TemperatureConversion.aspx" />
     <Content Include="Thanks.aspx" />
+    <Content Include="UserControls\InstructionNavigationControl.ascx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -191,18 +199,25 @@
     <Compile Include="Admin\FitnessClassList.aspx.designer.cs">
       <DependentUpon>FitnessClassList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Index.aspx.cs">
+    <Compile Include="Admin\InstructorFolder\ContactInfo.aspx.cs">
+      <DependentUpon>ContactInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\ContactInfo.aspx.designer.cs">
+      <DependentUpon>ContactInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Index.aspx.designer.cs">
+    <Compile Include="Admin\InstructorFolder\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\InstructorDetails.aspx.cs">
+    <Compile Include="Admin\InstructorFolder\InstructorDetails.aspx.cs">
       <DependentUpon>InstructorDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InstructorDetails.aspx.designer.cs">
+    <Compile Include="Admin\InstructorFolder\InstructorDetails.aspx.designer.cs">
       <DependentUpon>InstructorDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\InstructorFolder\InstructorForm.aspx.cs">
@@ -211,6 +226,13 @@
     </Compile>
     <Compile Include="Admin\InstructorFolder\InstructorForm.aspx.designer.cs">
       <DependentUpon>InstructorForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorList.aspx.cs">
+      <DependentUpon>InstructorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorList.aspx.designer.cs">
+      <DependentUpon>InstructorList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\InstructorList.aspx.cs">
       <DependentUpon>InstructorList.aspx</DependentUpon>
@@ -254,6 +276,7 @@
     <Compile Include="D-04-Instance-vs-Static-LAB.aspx.designer.cs">
       <DependentUpon>D-04-Instance-vs-Static-LAB.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Enums\Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -285,6 +308,13 @@
     <Compile Include="LoopsExample.aspx.designer.cs">
       <DependentUpon>LoopsExample.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterPages\Site2Column.Master.cs">
+      <DependentUpon>Site2Column.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Site2Column.Master.designer.cs">
+      <DependentUpon>Site2Column.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringTest.aspx.cs">
       <DependentUpon>StringTest.aspx</DependentUpon>
@@ -307,6 +337,13 @@
     <Compile Include="Thanks.aspx.designer.cs">
       <DependentUpon>Thanks.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\InstructionNavigationControl.ascx.cs">
+      <DependentUpon>InstructionNavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\InstructionNavigationControl.ascx.designer.cs">
+      <DependentUpon>InstructionNavigationControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -317,6 +354,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\Main\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

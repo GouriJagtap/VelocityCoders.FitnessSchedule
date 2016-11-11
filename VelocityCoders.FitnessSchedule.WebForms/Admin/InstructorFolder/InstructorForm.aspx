@@ -1,21 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorForm.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder.InstructorForm" %>
+﻿<%@ Page    Language="C#" 
+            AutoEventWireup="true" 
+            CodeBehind="InstructorForm.aspx.cs" 
+            MasterPageFile="~/MasterPages/Site2Column.Master"
+            Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder.InstructorForm"    
+            EnableViewState="true"
+            Theme="Theme"%>
 
-<!DOCTYPE html>
+<%@ Register TagPrefix="CustomVelocityCoders"
+             TagName="InstructorNavigation"
+             Src="~/UserControls/InstructionNavigationControl.ascx" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    
-    <form id="form1" runat="server">
-    <div>
-    <img src="/Images/header-logo.png" />
-        <br />
-        <br />
-        Current Time Is : <asp:Label runat="server" ID="lblPageMessage" />
-        <br />
-        <br />
+
+<asp:Content Id="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation" />
+                    <div id="InstructorContainer" class="BorderRadiusBottom">
+
+           <p><h3>Form Values Output: <asp:Label runat="server" ID="lblPageMessage"/></h3></p>
 
         <table>
             <tr>
@@ -68,8 +68,8 @@
             </tr>
         </table>
         <br />
-        <asp:Button runat="server" Text="Save" />
-    </div>
-    </form>
-</body>
-</html>
+        <asp:Button runat="server" Text="Save" OnClick="Save_Click"/>
+         </div>
+</asp:Content>
+                    
+      
