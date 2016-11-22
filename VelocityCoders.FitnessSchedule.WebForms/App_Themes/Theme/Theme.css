@@ -108,3 +108,27 @@ margin-right:auto;
 .SmallPadding{
     padding:4px;
 }
+.PageMessage{
+    font-weight:bold;
+    font-size:14px;
+    color:#990000;
+    text-align:center;
+}
+.TextCenter{
+    text-align:center;
+}
+.FloatLeft{
+    float:left;
+}
+.FloatRight{
+    float:right;
+}
+.ContainerBar{
+    background:#f4f3f1;
+    border-bottom:1px solid #e6e3e1;
+    border-top:1x solid #e6e3e1;
+    line-height:16px;
+    margin:15px -20px 0;
+    overflow:hidden;
+    padding:12px 20px; 
+}

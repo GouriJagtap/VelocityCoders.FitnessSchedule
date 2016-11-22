@@ -18,6 +18,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.UserControls
         /// Set the current instructor page. Link will be disabled for the 
         /// current subheader link of current page.
         /// </summary>
+       
         public InstructorNavigation CurrentNavigationLink { get; set; }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.UserControls
 
             //Notes: set local variables
 
-            string instructorIdQueryString = "InstructorId = " + this.InstructorId.ToString();
+            string instructorIdQueryString = "InstructorId=" + this.InstructorId.ToString();
 
             if(InstructorId > 0)
             {

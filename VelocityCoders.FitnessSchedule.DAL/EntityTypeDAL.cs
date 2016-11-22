@@ -46,7 +46,39 @@ namespace VelocityCoders.FitnessSchedule.DAL
             }
             return tempList;
         }
+        public static EntityTypeCollection GetCollection(EntityEnum entityName)
+        {
+            EntityTypeCollection tempList = null;
 
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_GetEntityType", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+
+                    myCommand.Parameters.AddWithValue("@QueryId", SelectTypeEnum.GetCollectionByName);
+                    myCommand.Parameters.AddWithValue("@EntityName", entityName.ToString());
+
+                    myConnection.Open();
+
+                    using (SqlDataReader myReader = myCommand.ExecuteReader())
+                    {
+                        if (myReader.HasRows)
+                        {
+                            tempList = new EntityTypeCollection();
+                            while (myReader.Read())
+                            {
+                                tempList.Add(FillDataRecord(myReader));
+                            }
+
+                        }
+                        myReader.Close();
+                    }
+
+                }
+            }
+            return tempList;
+        }
         private static EntityType FillDataRecord(IDataRecord myDataRecord)
         {
             EntityType myObject = new EntityType();
@@ -58,6 +90,9 @@ namespace VelocityCoders.FitnessSchedule.DAL
 
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EntityTypeName")))
                 myObject.EntityTypeName = myDataRecord.GetString(myDataRecord.GetOrdinal("EntityTypeName"));
+
+            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("DisplayName")))
+                myObject.EntityTypeName = myDataRecord.GetString(myDataRecord.GetOrdinal("DisplayName"));
 
             //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EmailAddress")))
             //    myObject.EmailAddress = myDataRecord.GetString(myDataRecord.GetOrdinal("EmailAddress"));

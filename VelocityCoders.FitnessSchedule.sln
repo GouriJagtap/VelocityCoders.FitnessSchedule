@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessSched
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jagtap.Common", "Jagtap.Common\Jagtap.Common.csproj", "{AACF6DA2-8BB4-4620-840A-E622A78EBD41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessSchedule.BLL", "VelocityCoders.FitnessSchedule.BLL\VelocityCoders.FitnessSchedule.BLL.csproj", "{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AACF6DA2-8BB4-4620-840A-E622A78EBD41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AACF6DA2-8BB4-4620-840A-E622A78EBD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AACF6DA2-8BB4-4620-840A-E622A78EBD41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,11 +12,14 @@
 
 
 <asp:Content Id="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation" />
-                    <div id="InstructorContainer" class="BorderRadiusBottom">
+    <asp:HiddenField runat="server" Id="hidInstructorId" value="0" />
+    <asp:HiddenField runat="server" Id="hidPersonId" value="0" />
 
-           <p><h3>Form Values Output: <asp:Label runat="server" ID="lblPageMessage"/></h3></p>
-
+    <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation" />           
+         
+        <div id="InstructorContainer" class="BorderRadiusButton">
+            <div class="PageMessage"><asp:Label runat="server" id="lblPageMessage" /></div>
+        
         <table>
             <tr>
                 <td><label>First Name</label></td>
@@ -47,16 +50,19 @@
             <tr>
                 <td><label> Employee Type </label></td>
                 <td>
-                    <asp:DropDownList runat="server" ID="drpEmployeeType">
-                        <asp:ListItem Text="(Select Employee Type)" />
-                    </asp:DropDownList>
+                    <asp:DropDownList   runat="server" 
+                                        ID="drpEmployeeType" 
+                                        DataTextField="EntityTypeName"
+                                        DataValueField="EntityTypeId" />
+                       
+                    
                 </td>
             </tr>
             <tr>
                 <td><label> Gender </label></td>
                 <td>
                     <asp:DropDownList runat="server" ID="drpGender">
-                        <asp:ListItem Text="(Select Gender)" Value="0" />
+                        <asp:ListItem Text="Select Gender" Value="0" />
                         <asp:ListItem Text="Male" Value="Male" />
                         <asp:ListItem Text="Female" Value="Female" />
                     </asp:DropDownList>
@@ -68,7 +74,14 @@
             </tr>
         </table>
         <br />
-        <asp:Button runat="server" Text="Save" OnClick="Save_Click"/>
+        <div class="ContainerBar">
+            <asp:Button runat="server" Text="Save" Id="btnSave" OnClick="Save_Click"/>
+            &nbsp;&nbsp;
+            <asp:Button runat="server" Text="Cancel" id="btnCancel" onClick ="Cancel_Click" />
+            <span class="FloatRight">
+                <asp:Button runat="server" Text="Delete" Id="btnDelete" OnClick="Delete_Click" visible="False" />
+            </span>
+         </div>
          </div>
 </asp:Content>
                     

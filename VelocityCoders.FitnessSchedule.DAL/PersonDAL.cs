@@ -103,5 +103,90 @@ namespace VelocityCoders.FitnessSchedule.DAL
             return tempItem;
               
         }
+
+        #region INSERT and UPDATE
+        /// <summary>
+        /// Saves the Person to the Databese. Determines to INSERT or UPDATE based on
+        /// valid personId
+        /// </summary>
+        /// <param name="personToSave"></param>
+        /// <returns></returns>
+        public static int Save(Person personToSave)
+        {
+            int result = 0;
+            ExecuteTypeEnum queryId = ExecuteTypeEnum.InsertItem;
+
+            if (personToSave.PersonId > 0)
+             queryId = ExecuteTypeEnum.UpdateItem;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecutePerson", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+
+                    myCommand.Parameters.AddWithValue("@QueryId", queryId);
+
+                    if (personToSave.PersonId > 0)
+                        myCommand.Parameters.AddWithValue("@PersonId", personToSave.PersonId);
+
+                    if (personToSave.FirstName != null)
+                        myCommand.Parameters.AddWithValue("@FirstName", personToSave.FirstName);
+
+                    if (personToSave.LastName != null)
+                        myCommand.Parameters.AddWithValue("@LastName", personToSave.LastName);
+
+                    if (personToSave.DisplayFirstName != null)
+                        myCommand.Parameters.AddWithValue("@DisplayFirstName", personToSave.DisplayFirstName);
+
+                    if (personToSave.Gender != null)
+                        myCommand.Parameters.AddWithValue("@Gender", personToSave.Gender);
+
+                    if (personToSave.BirthDate != DateTime.MinValue)
+                        myCommand.Parameters.AddWithValue("@BirthDate", personToSave.BirthDate.ToShortDateString());
+
+                    //Add return output parameter to command object
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
+
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
+                    
+                }
+
+                myConnection.Close();
+            }
+            return result;
+        }
+        #endregion
+
+        #region DELETE
+        
+        public static bool Delete(int PersonId)
+        {
+            int result = 0;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecutePerson", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+
+                    myCommand.Parameters.AddWithValue("@QueryId", ExecuteTypeEnum.DeleteItem);
+                    myCommand.Parameters.AddWithValue("@PersonId", PersonId);
+
+                    myConnection.Open();
+                    result = myCommand.ExecuteNonQuery();
+                }
+                myConnection.Close();
+            }
+         return result > 0;
+
+        }
+        
+        #endregion
+
+
     }
 }

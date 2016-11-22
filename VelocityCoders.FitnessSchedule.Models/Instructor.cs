@@ -12,8 +12,7 @@ namespace VelocityCoders.FitnessSchedule.Models
         //Default Constructor
         public Instructor()
         {
-            base.FirstName = "Da";
-            base.LastName = "La";
+          
         }
         //Overloaded constructor
         public Instructor (int instructorId, int personId)
@@ -29,8 +28,9 @@ namespace VelocityCoders.FitnessSchedule.Models
         public int EntityTypeId { get; set; }
         public DateTime HireDate { get; set; }
         public DateTime TermDate { get; set; }
-        public DateTime BirthDate { get; set; }
+        public string Description   { get; set; }
         public DateTime CreateDate { get; set; }
+
 
         //Implement Interface Method 
 

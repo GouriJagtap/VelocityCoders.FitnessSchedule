@@ -269,6 +269,9 @@
     <Compile Include="ConditiolanStatements.aspx.designer.cs">
       <DependentUpon>ConditiolanStatements.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Custom\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="D-04-Instance-vs-Static-LAB.aspx.cs">
       <DependentUpon>D-04-Instance-vs-Static-LAB.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,6 +364,10 @@
     <ProjectReference Include="..\Jagtap.Common\Jagtap.Common.csproj">
       <Project>{aacf6da2-8bb4-4620-840a-e622a78ebd41}</Project>
       <Name>Jagtap.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VelocityCoders.FitnessSchedule.BLL\VelocityCoders.FitnessSchedule.BLL.csproj">
+      <Project>{57f26fc4-b3e1-476d-b9ce-e0c29f6c857c}</Project>
+      <Name>VelocityCoders.FitnessSchedule.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\VelocityCoders.FitnessSchedule.DAL\VelocityCoders.FitnessSchedule.DAL.csproj">
       <Project>{befc9ab0-882c-47f0-9275-1d3e207f528d}</Project>
