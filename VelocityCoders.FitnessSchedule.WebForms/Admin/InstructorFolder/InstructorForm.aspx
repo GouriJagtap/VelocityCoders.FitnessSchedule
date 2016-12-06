@@ -14,12 +14,30 @@
 <asp:Content Id="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HiddenField runat="server" Id="hidInstructorId" value="0" />
     <asp:HiddenField runat="server" Id="hidPersonId" value="0" />
+    <asp:HiddenField runat="server" ID="hndEmailId" Value="0" />
 
     <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation" />           
          
         <div id="InstructorContainer" class="BorderRadiusButton">
-            <div class="PageMessage"><asp:Label runat="server" id="lblPageMessage" /></div>
-        
+          
+        <asp:Panel
+            runat="server"
+            ID="PageMessageArea"
+            CssClass="PageMessage BorderRadiusAll"
+            Visible="false">
+            <asp:Label runat="server" ID="lblPageMessage"></asp:Label> 
+                <asp:ListView runat="server" ID="MessageList" ItemPlaceHolderID="MessageListPlaceholder">
+                    <LayoutTemplate>
+                        <ul>
+                            <asp:PlaceHolder runat="server" ID="MessageListPlaceholder" />
+                        </ul>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <li><%#Eval("PropertyName") %>: <%#Eval("Message") %></li>
+                    </ItemTemplate>
+                </asp:ListView>
+        </asp:Panel>
+            <br/>
         <table>
             <tr>
                 <td><label>First Name</label></td>

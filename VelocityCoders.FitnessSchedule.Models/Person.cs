@@ -87,6 +87,20 @@ namespace VelocityCoders.FitnessSchedule.Models
         {
             return s1 + s2;
         }
-    
+
+        public string FullName
+        {
+            get
+            {
+                return this.FirstName + " " + this.LastName;
+            }
+        }
+    public string FullNameLastNameFirst
+        {
+            get
+            {
+                return this.LastName + " " + this.LastName;
+            }
+        }
     }
 }

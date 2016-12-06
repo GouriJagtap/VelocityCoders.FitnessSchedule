@@ -16,6 +16,9 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
 {
     public partial class InstructorForm : BasePage
     {
+        #region PROPERTIES
+        #endregion
+
 
         #region EVENT HANDLERS
         protected void Page_Load(object sender, EventArgs e)
@@ -44,7 +47,8 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
         protected void Save_Click(object sender, EventArgs e)
         
         {
-          this.ProcessForm();
+            if(this.ValidateForm())
+               this.ProcessForm();
         }
 
         protected void Cancel_Click(object sender, EventArgs e)
@@ -58,6 +62,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
         }
 
         #endregion EVENT HANDLERS
+
 
         private void ProcessForm()
         {
@@ -74,6 +79,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
             string notes = txtNotes.Text;
             string personId = hidPersonId.Value;
             string instructorId = hidInstructorId.Value;
+            //string emailId = hndEmailId.Value;
 
             Instructor instructorToSave = new Instructor();
 
@@ -99,8 +105,11 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
             //Call the instructorManager class
 
            InstructorManager.Save(instructorToSave);
-            if(instructorToSave.InstructorId > 0)
-            base.DisplayPageMessage(lblPageMessage, "Update was successful!");
+            if (instructorToSave.InstructorId > 0)
+                
+                this.DisplayLocalMessage("Update Saved Successfully.");
+                //lblPageMessage.Text = "Save Successfully!";
+               // base.DisplayPageMessage(lblPageMessage, "Update was successful!");
             else
             {
                 Response.Redirect("InstructorList.aspx");
@@ -139,6 +148,9 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
             
                 this.SetButtons(false);            
         }
+
+
+        #region BIND CONTROLS
 
         private void BindInstructorNavigation()
         {
@@ -195,6 +207,9 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
             hidPersonId.Value = instructorToUpdate.PersonId.ToString();
         }
 
+        #endregion
+
+
         private void SetButtons(bool isUpdate)
         {
             if(isUpdate)
@@ -216,10 +231,11 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
         private void DeleteInstructor()
         {
             int instructorId = hidInstructorId.Value.ToInt();
+            //int emailId = hndEmailId.Value.ToInt();
 
             if (instructorId > 0)
             {
-                // Call middle tier to delete record
+              // Call middle tier to delete record
 
                 if (InstructorManager.Delete(instructorId))
                 {
@@ -227,14 +243,76 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
                     Response.Redirect("InstructorList.aspx");
                 }
                 else
-                    base.DisplayPageMessage(lblPageMessage, "Error. Delete failed");
+                    this.DisplayLocalMessage("Error. Delete failed");
+                //base.DisplayPageMessage(lblPageMessage, "Error. Delete failed");
             }
             else
-                base.DisplayPageMessage(lblPageMessage, "Invalid ID. Delete failed");
+                this.DisplayLocalMessage("Invalid ID. Delete failed");
+               // base.DisplayPageMessage(lblPageMessage, "Invalid ID. Delete failed");
         }
-       
-       
+
+        private bool ValidateForm()
+        {
+            bool returnValue = true;
+            BrokenRuleCollection brokenRules = new BrokenRuleCollection();
+
+            if (string.IsNullOrEmpty(txtFirstName.Text.Trim()))
+                brokenRules.Add("First Name", "Required field");
+
+            if (string.IsNullOrEmpty(txtLastName.Text.Trim()))
+                brokenRules.Add("Last Name", "Required field");
+
+            if (drpEmployeeType.SelectedValue == "0")
+                brokenRules.Add("Employee Type", "Select an Employee Type from the drop down list");
+
+            if (drpGender.SelectedValue == "0")
+                brokenRules.Add("Gender", "Select a Gender from the drop down list");
+
+           if(!string.IsNullOrEmpty(txtBirthDate.Text.Trim()))
+            {
+                if (txtBirthDate.Text.Trim().ToDate() == DateTime.MinValue)
+                    brokenRules.Add("Date Of Birth", "Please enter a valid date.");
+            }
+
+            if (!string.IsNullOrEmpty(txtHireDate.Text.Trim()))
+            {
+                if (txtHireDate.Text.Trim().ToDate() == DateTime.MinValue)
+                    brokenRules.Add("Date Of Hire", "Please enter a valid date.");
+            }
+            if (!string.IsNullOrEmpty(txtTermDate.Text.Trim()))
+            {
+                if (txtTermDate.Text.Trim().ToDate() == DateTime.MinValue)
+                    brokenRules.Add("Date Of Term", "Please enter a valid date.");
+            }
+            if(brokenRules.Count() > 0)
+            {
+                MessageList.DataSource = brokenRules;
+                MessageList.DataBind();
+
+                if(brokenRules.Count()==1)
+                {
+                    this.DisplayLocalMessage("There was an error processing your form. Please correct and try saving again");
+                }
+                else
+                {
+                    this.DisplayLocalMessage("There was some error processing your form. Please correct and try saving again");
+                }
+                returnValue = false;
+            }
+           return returnValue ;
+        }
+
+        #region HELPER
+
+        private void DisplayLocalMessage(string message)
+        {
+            PageMessageArea.Visible = true;
+            lblPageMessage.Text = message;
+        }
+
+        #endregion
+
     }
-   
+
 
 }

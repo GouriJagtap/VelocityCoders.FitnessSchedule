@@ -58,6 +58,23 @@ margin-right:auto;
     text-shadow:0 1px 1px rgba(0,0,0,0.4);
     color:#fff;
 }
+#EmployeeContainer,
+#GenericContainer,
+#Container,
+.PageMessage,
+.BorderRadius,
+.BorderRadiusAll,
+.BorderRadiusBottom,
+.BorderRadiusTop{
+    border: 1px solid #cccccc;
+    -moz-box-shadow:rgba(0,0,0,0.1)0 0 2px 0px;
+    -webkit-box-shadow:rgba(0,0,0,0.1)0 0 2px 0px;
+    box-shadow:rgba(0,0,0,0.1)0 0 2px 0px;
+}
+.BorderRadiusAll{
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius:4px 4px 4px 4px;
+}
 #Container{
     background-color:transparent;
     position:absolute;
@@ -84,7 +101,17 @@ margin-right:auto;
     overflow:scroll;
     width:auto;
 }
-
+#ContainerSubheader{
+    background-color:#d6d6d6;
+    padding:10px;
+    text-align:center;
+}
+#InstructorContainer,
+#GenericContainer{
+    padding:20px;
+    background-color:#fff;
+    min-height:10px;
+}
 #InstructorContainer table{
     width:100%;
 }
@@ -131,4 +158,77 @@ margin-right:auto;
     margin:15px -20px 0;
     overflow:hidden;
     padding:12px 20px; 
+}
+
+.ListStyle{
+    border:solid 1px #d6d6d6;
+    border-spacing:0px;
+    border-collapse:separate;
+
+}
+
+.ListStyle th{
+    border-left:solid 1px #d6d6d6;
+    border-right:solid 1px #d6d6d6;
+    border-bottom:solid 1px #d6d6d6;
+    padding:5px;
+    background: -webkit-linear-gradient(top #f1f1f1, #d6d6d6);
+}
+.ListStyle td{
+    padding:5px;
+}
+.ListStyleAlternate{
+    background:#f4f3f1;
+    border-bottom:1px solid #e6e3e1;
+    border-top:1px solid #e6e3e1;
+}
+.CenterText{
+    text-align:center;
+}
+.InstructorNavigationContainer,
+.GenericNavigationContainer{
+    background: -webkit-linear-gradient(top, #e6e6e8,  #d6d6d6);
+    padding:10px;
+    height:20px;
+}
+.Button{
+    font:bold 11px/30px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    color:#808080;
+    text-shadow:#ffffff 0 1px 0;
+    cursor: pointer;
+
+    border:1px solid #ccc;
+    padding-top:4px;
+    padding-bottom:4px;
+    padding-left:10px;
+    padding-right:10px;
+    background: -webkit-linear-gradient(top, #f8f8f9, #e6e6e8);
+    text-decoration:none;
+}
+.ButtonRoundedLeft{
+    -moz-border-radius:5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+}
+.ButtonRoundedRight{
+    -moz-border-radius:0px 5px 5px 0px;
+    -webkit-border-radius:0px 5px 5px 0px;
+    border-radius:0px 5px 5px 0px;
+}
+.HeaderText{
+    font-weight:bold;
+    font-size:13px;
+}
+
+.PageMessage{
+    background-color:#990000;
+    font-weight:bold;
+    font-size:12px;
+    padding:10px;
+    margin-bottom:10px;
+}
+.PageMessage span,
+.PageMessage li{
+    color:#f1f1f1;
 }

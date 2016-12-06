@@ -1,4 +1,8 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="InstructionNavigationControl.ascx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.UserControls.WebUserControl1" %>
+﻿<%@ Control Language="C#"
+            AutoEventWireup="true" 
+            CodeBehind="InstructionNavigationControl.ascx.cs" 
+            Inherits="VelocityCoders.FitnessSchedule.WebForms.UserControls.WebUserControl1" %>
+
 <div id="ContainerSubheader" class="SubheaderNavigation BorderRadiusTop">
     <asp:Label runat="server" ID="UCMessage"></asp:Label>
     <div class="SmallPadding">

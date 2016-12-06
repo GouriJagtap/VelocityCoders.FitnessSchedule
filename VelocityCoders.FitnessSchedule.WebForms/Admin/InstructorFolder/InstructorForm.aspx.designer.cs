@@ -31,6 +31,15 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder {
         protected global::System.Web.UI.WebControls.HiddenField hidPersonId;
         
         /// <summary>
+        /// hndEmailId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hndEmailId;
+        
+        /// <summary>
         /// instructorNavigation control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder {
         protected global::VelocityCoders.FitnessSchedule.WebForms.UserControls.WebUserControl1 instructorNavigation;
         
         /// <summary>
+        /// PageMessageArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PageMessageArea;
+        
+        /// <summary>
         /// lblPageMessage control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPageMessage;
+        
+        /// <summary>
+        /// MessageList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView MessageList;
         
         /// <summary>
         /// txtFirstName control.

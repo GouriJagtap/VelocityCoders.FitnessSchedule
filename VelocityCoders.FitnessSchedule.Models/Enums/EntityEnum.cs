@@ -11,6 +11,7 @@
         /// Email Entity
         /// </summary>
         EmailType,
+
         /// <summary>
         /// Fitness Class Category entity
         /// </summary>

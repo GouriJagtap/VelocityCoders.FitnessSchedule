@@ -42,10 +42,13 @@
   <ItemGroup>
     <Compile Include="BaseCollection.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Exceptions\CustomException.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\TemprratureConverter.cs" />
     <Compile Include="Helpers\StateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\BrokenRule.cs" />
+    <Compile Include="Validations\EmailValidator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

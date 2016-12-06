@@ -22,7 +22,9 @@ namespace VelocityCoders.FitnessSchedule.Models
         /// <summary>
         /// Delete an Item from the database
         /// </summary>
-        DeleteItem = 30
+        DeleteItem = 30,
+
+        DeleteEmail = 31
 
 
     }

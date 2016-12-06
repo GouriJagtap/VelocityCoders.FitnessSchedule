@@ -13,6 +13,15 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder {
     public partial class ContactInfo {
         
         /// <summary>
+        /// hdnEmailId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnEmailId;
+        
+        /// <summary>
         /// instructorNavigation control.
         /// </summary>
         /// <remarks>
@@ -20,5 +29,50 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::VelocityCoders.FitnessSchedule.WebForms.UserControls.WebUserControl1 instructorNavigation;
+        
+        /// <summary>
+        /// CustomMessageArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::VelocityCoders.FitnessSchedule.WebForms.UserControls.MessageBrokenRulesControl CustomMessageArea;
+        
+        /// <summary>
+        /// txtEmailAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmailAddress;
+        
+        /// <summary>
+        /// drpEmailType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpEmailType;
+        
+        /// <summary>
+        /// SaveButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SaveButton;
+        
+        /// <summary>
+        /// rptEmailList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptEmailList;
     }
 }

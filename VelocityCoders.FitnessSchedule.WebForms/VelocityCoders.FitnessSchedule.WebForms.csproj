@@ -120,6 +120,7 @@
     <Content Include="ArrayExample.aspx" />
     <Content Include="ConditiolanStatements.aspx" />
     <Content Include="D-04-Instance-vs-Static-LAB.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="HTMLIntro.aspx" />
     <Content Include="Images\Agates.jpg" />
     <Content Include="Images\header-logo.png" />
@@ -146,6 +147,7 @@
     <Content Include="TemperatureConversion.aspx" />
     <Content Include="Thanks.aspx" />
     <Content Include="UserControls\InstructionNavigationControl.ascx" />
+    <Content Include="UserControls\MessageBrokenRulesControl.ascx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -280,6 +282,13 @@
       <DependentUpon>D-04-Instance-vs-Static-LAB.aspx</DependentUpon>
     </Compile>
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -346,6 +355,13 @@
     </Compile>
     <Compile Include="UserControls\InstructionNavigationControl.ascx.designer.cs">
       <DependentUpon>InstructionNavigationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageBrokenRulesControl.ascx.cs">
+      <DependentUpon>MessageBrokenRulesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessageBrokenRulesControl.ascx.designer.cs">
+      <DependentUpon>MessageBrokenRulesControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

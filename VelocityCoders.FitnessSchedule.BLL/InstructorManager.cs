@@ -12,12 +12,15 @@ namespace VelocityCoders.FitnessSchedule.BLL
 {
     public static class InstructorManager
     {
-
         #region SAVE
 
+        /// <summary>
+        /// Saves the Instructor object to the database
+        /// </summary>
+        /// <param name="instructorToSave"></param>
+        /// <returns></returns>
         public static int Save(Instructor instructorToSave)
         {
-
 
             int personId = SavePerson(instructorToSave);
 
@@ -26,6 +29,11 @@ namespace VelocityCoders.FitnessSchedule.BLL
             return InstructorDAL.Save(instructorToSave);
         }
 
+        public static int SaveEmail(int instructorId, EmailAddress emailToSave)
+        {
+            return EmailAddressManager.Save(instructorId, emailToSave);
+        }
+        
         #endregion
 
         #region HELPER METHODS
@@ -49,7 +57,6 @@ namespace VelocityCoders.FitnessSchedule.BLL
 
         #endregion
 
-
         #region SELECT
 
         public static Instructor GetItem(int instructorId)
@@ -72,22 +79,35 @@ namespace VelocityCoders.FitnessSchedule.BLL
             if (toDelete != null)
             {
                 if (toDelete.PersonId > 0 && toDelete.InstructorId > 0)
-                { 
-                    // delete instructor first
-                    if (InstructorDAL.Delete(toDelete.InstructorId))
+                {
+                    EmailAddressCollection emailItem = EmailAddressManager.GetCollection(instructorId);
+                    if (emailItem != null)
                     {
-                        return PersonDAL.Delete(toDelete.PersonId);
+                        //DElete Email record first
 
+                        if (EmailAddressDAL.DeleteCollection(instructorId))
+                        {
+                            // delete instructor first
+                            if (InstructorDAL.Delete(toDelete.InstructorId))
+                            {
+                                return PersonDAL.Delete(toDelete.PersonId);
+                            }
+                            else
+                                return false;
+                        }
+                        else
+                            return false;
                     }
                     else
                         return false;
+                }
+                else
+                    return false;
             }
             else
                 return false;
         }
-        else 
-        return false;
-     }
+
         #endregion
     }
 }

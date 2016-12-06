@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\Collections.cs" />
     <Compile Include="Collections\EmailCollection.cs" />
     <Compile Include="Collections\EntityCollection.cs" />
     <Compile Include="Collections\EntityTypeCollection.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Collections\LocationFitnessClassCollection.cs" />
     <Compile Include="Collections\PersonCollection.cs" />
     <Compile Include="Email.cs" />
+    <Compile Include="EmailAddress.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EntityType.cs" />
     <Compile Include="Enums\ExecuteTypeEnum.cs" />

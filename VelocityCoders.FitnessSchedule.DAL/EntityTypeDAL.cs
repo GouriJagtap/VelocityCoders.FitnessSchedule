@@ -94,8 +94,8 @@ namespace VelocityCoders.FitnessSchedule.DAL
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("DisplayName")))
                 myObject.EntityTypeName = myDataRecord.GetString(myDataRecord.GetOrdinal("DisplayName"));
 
-            //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EmailAddress")))
-            //    myObject.EmailAddress = myDataRecord.GetString(myDataRecord.GetOrdinal("EmailAddress"));
+            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Description")))
+                myObject.Description = myDataRecord.GetString(myDataRecord.GetOrdinal("Description"));
 
             //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("CreateDate")))
             //    myObject.FirstName = myDataRecord.GetString(myDataRecord.GetOrdinal("CreateDate"));
