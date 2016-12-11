@@ -3,7 +3,7 @@
     Language="C#" 
     MasterPageFile="~/MasterPages/Site2Column.Master" 
     AutoEventWireup="true"
-     CodeBehind="ContactInfo.aspx.cs" 
+    CodeBehind="ContactInfo.aspx.cs" 
     Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder.ContactInfo" %>
 
 <%@ Register TagPrefix="CustomVelocityCoders" 
@@ -25,14 +25,15 @@
      <CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" />
 
     <div id="InstructorContainer" class="BorderRadiusBottom">
-       
+<%--       <div class="PageMessage"><asp:Label runat="server" ID="lblPageMessage" /></div>--%>
+        <div class="SectionMessageArea SmallText"><label class="Required">*</label>=Required Field</div>
            <table>
            <tr>
-               <td><label> Email Address:</label></td>
+               <td><label class="Required"> Email Address:*</label></td>
                <td> <asp:TextBox runat="server" ID="txtEmailAddress" MaxLength="50"/></td>
            </tr>
            <tr>
-               <td><label> Email Type:</label></td>
+               <td><label class="Required"> Email Type:*</label></td>
                <td>
                    <asp:DropDownList runat="server" 
                                      ID="drpEmailType"

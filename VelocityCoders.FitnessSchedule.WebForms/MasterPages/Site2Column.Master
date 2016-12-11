@@ -25,7 +25,25 @@
         </div>
         <div id="Container">
             <div id="NavigationContainer">
-                <div id="NavigationContainerContent">Left Navigation PlaceHolder</div>
+                <div id="NavigationContainerContent">
+                    <ul>
+                        <li runat="server" id="Instructor">
+                            <a href="/Admin/InstructorFolder/InstructorList.aspx"> Instructor </a>
+                        </li>
+                        <li runat="server" id="GymLocation">
+                            <a href="/Admin/GymLocationArea/"> Gym Location</a>
+                        </li>
+                        <li runat="server" id="FitnessClass">
+                            <a href="/Admin/FitnessClassArea/">Fitness Class</a>
+                        </li>
+                        <li runat="server" id="Schedule">
+                            <a href="/Admin/ScheduleArea/">ScheduleArea</a>
+                        </li>
+                        <li runat="server" id="LookupTables">
+                            <a href="/Admin/LookupTablesArea/">Lookup Tables</a>
+                        </li>
+                    </ul>
+               </div>
             </div>
             <div id="BodyContainer">
                 <div id="BodyContainerContent">

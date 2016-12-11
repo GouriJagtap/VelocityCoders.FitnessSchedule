@@ -20,6 +20,8 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
         {
             if (IsPostBack)
             {
+                base.SetMasterPageNavigation(Webforms.MasterNavigation.Instructor);
+                base.ValidateInstructorId("InstructorList.aspx");
                 this.BindInstructorNavigation();
             }
             else
@@ -179,6 +181,18 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
 
        
         #endregion
+
+        //public void ValidateInstructorId(string redirectPage)
+        //{
+        //    if(this.InstructorId > 0)
+        //    {
+        //        //InstructorId exists - check if its valid record in the database
+        //    }
+        //    else
+        //    {
+        //        Response.Redirect(redirectPage);
+        //    }
+        //}
 
     }
 }

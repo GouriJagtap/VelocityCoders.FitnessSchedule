@@ -37,10 +37,11 @@
                     </ItemTemplate>
                 </asp:ListView>
         </asp:Panel>
+            <div class="SectionMessageArea SmallText"><label class="Reqiured">*</label>=Required Field</div>
             <br/>
         <table>
             <tr>
-                <td><label>First Name</label></td>
+                <td><label class="Required">First Name*</label></td>
                 <td><asp:TextBox runat="server" ID="txtFirstName" MaxLength="50" /> </td>
             </tr>
             <tr>
@@ -49,7 +50,7 @@
             </tr>
           
              <tr>
-                <td><label>Last Name</label></td>
+                <td><label class="Required">Last Name*</label></td>
                 <td><asp:TextBox runat="server" ID="txtLastName" MaxLength="50" /> </td>
             </tr>
              <tr>

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessSchedule.WebForms", "VelocityCoders.FitnessSchedule.WebForms\VelocityCoders.FitnessSchedule.WebForms.csproj", "{7628FD87-BDC9-46E9-9199-02F10C5D2B69}"
+	ProjectSection(ProjectDependencies) = postProject
+		{56F5FE8F-9412-4A0E-8266-CA1A008F6C7D} = {56F5FE8F-9412-4A0E-8266-CA1A008F6C7D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessSchedule.Models", "VelocityCoders.FitnessSchedule.Models\VelocityCoders.FitnessSchedule.Models.csproj", "{B4C25311-4121-45CE-B175-70CDF01F4E52}"
 EndProject
@@ -12,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jagtap.Common", "Jagtap.Common\Jagtap.Common.csproj", "{AACF6DA2-8BB4-4620-840A-E622A78EBD41}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessSchedule.BLL", "VelocityCoders.FitnessSchedule.BLL\VelocityCoders.FitnessSchedule.BLL.csproj", "{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessSchedule.Services", "VelocityCoders.FitnessSchedule.Services\VelocityCoders.FitnessSchedule.Services.csproj", "{56F5FE8F-9412-4A0E-8266-CA1A008F6C7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +44,10 @@ Global
 		{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57F26FC4-B3E1-476D-B9CE-E0C29F6C857C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F5FE8F-9412-4A0E-8266-CA1A008F6C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F5FE8F-9412-4A0E-8266-CA1A008F6C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F5FE8F-9412-4A0E-8266-CA1A008F6C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F5FE8F-9412-4A0E-8266-CA1A008F6C7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -26,7 +26,7 @@ namespace VelocityCoders.FitnessSchedule.DAL
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
-                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteEmail", myConnection))
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteEmail_Error", myConnection))
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
 

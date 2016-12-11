@@ -40,6 +40,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.UserControls
         private void BindMessageArea()
         {
             if (!string.IsNullOrEmpty(this.Message))
+                PageMessageArea.Visible = true;
                 PageMessage.Text = this.Message;
 
             if(this.BrokenRules != null && this.BrokenRules.Count() >0)

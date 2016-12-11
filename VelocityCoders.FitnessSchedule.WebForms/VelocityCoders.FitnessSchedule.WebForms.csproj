@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +80,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -102,16 +108,20 @@
     <Content Include="Admin\EmailList.aspx" />
     <Content Include="Admin\EntityTypeDetails.aspx" />
     <Content Include="Admin\EntityTypeList.aspx" />
+    <Content Include="Admin\FitnessClassArea\Default.aspx" />
     <Content Include="Admin\FitnessCLassDetails.aspx" />
     <Content Include="Admin\FitnessClassList.aspx" />
+    <Content Include="Admin\GymLocationArea\Default.aspx" />
     <Content Include="Admin\InstructorFolder\ContactInfo.aspx" />
     <Content Include="Admin\InstructorFolder\Index.aspx" />
     <Content Include="Admin\InstructorFolder\InstructorDetails.aspx" />
     <Content Include="Admin\InstructorFolder\InstructorForm.aspx" />
     <Content Include="Admin\InstructorFolder\InstructorList.aspx" />
     <Content Include="Admin\InstructorList.aspx" />
+    <Content Include="Admin\LookupTablesArea\Default.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
+    <Content Include="Admin\ScheduleArea\Default.aspx" />
     <Content Include="App_Themes\Images\background-banner.jpg" />
     <Content Include="App_Themes\Images\header-logo.png" />
     <Content Include="App_Themes\Theme\FormControls.css" />
@@ -130,6 +140,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MasterPages\Site2Column.Master" />
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.wsdl" />
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceHelloWorld\HelloWorld1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -143,6 +160,14 @@
     <Content Include="HelloWorld1.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.disco" />
+    <None Include="Service References\ServiceHelloWorld\configuration91.svcinfo" />
+    <None Include="Service References\ServiceHelloWorld\configuration.svcinfo" />
+    <None Include="Service References\ServiceHelloWorld\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceExample.aspx" />
     <Content Include="StringTest.aspx" />
     <Content Include="TemperatureConversion.aspx" />
     <Content Include="Thanks.aspx" />
@@ -187,6 +212,13 @@
     <Compile Include="Admin\EntityTypeList.aspx.designer.cs">
       <DependentUpon>EntityTypeList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\FitnessClassArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FitnessClassArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\FitnessCLassDetails.aspx.cs">
       <DependentUpon>FitnessCLassDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,6 +232,13 @@
     </Compile>
     <Compile Include="Admin\FitnessClassList.aspx.designer.cs">
       <DependentUpon>FitnessClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\InstructorFolder\ContactInfo.aspx.cs">
       <DependentUpon>ContactInfo.aspx</DependentUpon>
@@ -243,6 +282,13 @@
     <Compile Include="Admin\InstructorList.aspx.designer.cs">
       <DependentUpon>InstructorList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\LookupTablesArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PersonDetails.aspx.cs">
       <DependentUpon>PersonDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,6 +302,13 @@
     </Compile>
     <Compile Include="Admin\PersonList.aspx.designer.cs">
       <DependentUpon>PersonList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ScheduleArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ScheduleArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="ArrayExample.aspx.cs">
       <DependentUpon>ArrayExample.aspx</DependentUpon>
@@ -282,6 +335,7 @@
       <DependentUpon>D-04-Instance-vs-Static-LAB.aspx</DependentUpon>
     </Compile>
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Enums\MasterNavigation.cs" />
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,6 +382,18 @@
       <DependentUpon>Site2Column.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceHelloWorld\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceExample.aspx.cs">
+      <DependentUpon>ServiceExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceExample.aspx.designer.cs">
+      <DependentUpon>ServiceExample.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StringTest.aspx.cs">
       <DependentUpon>StringTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -396,6 +462,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceHelloWorld\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

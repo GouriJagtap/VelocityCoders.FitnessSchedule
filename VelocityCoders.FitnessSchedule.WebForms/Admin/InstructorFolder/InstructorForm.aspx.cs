@@ -11,39 +11,43 @@ using VelocityCoders.FitnessSchedule.Models.Collections;
 using Jagtap.Common.Extensions;
 using Jagtap.Common;
 using VelocityCoders.FitnessSchedule.BLL;
+using VelocityCoders.FitnessSchedule.Webforms;
 
 namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
 {
     public partial class InstructorForm : BasePage
     {
-        #region PROPERTIES
-        #endregion
 
-
-        #region EVENT HANDLERS
         protected void Page_Load(object sender, EventArgs e)
         {
             // lblPageMessage.Text = InstructorNavigation.InstructorForm.ToString();
             //instructorNavigation.CurrentNavigationLink = InstructorNavigation.InstructorForm;
 
-           
+
             if (Page.IsPostBack)
             {
-                    this.BindInstructorNavigation();
+                base.SetMasterPageNavigation(MasterNavigation.Instructor);
+                this.BindInstructorNavigation();
 
-             }
-             else
+
+            }
+            else
             {
 
                 this.BindInstructorNavigation();
                 this.BindEmployeeType();
                 this.CheckUpdate();
-                
+
             }
-          
+
 
         }
-       
+
+
+
+        #region EVENT HANDLERS
+
+
         protected void Save_Click(object sender, EventArgs e)
         
         {
@@ -62,7 +66,6 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
         }
 
         #endregion EVENT HANDLERS
-
 
         private void ProcessForm()
         {
@@ -312,6 +315,8 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
 
         #endregion
 
+          #region PROPERTIES
+                #endregion
     }
 
 

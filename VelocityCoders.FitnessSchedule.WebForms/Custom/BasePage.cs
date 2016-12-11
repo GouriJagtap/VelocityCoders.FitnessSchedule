@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
+using VelocityCoders.FitnessSchedule.Webforms;
 
 namespace VelocityCoders.FitnessSchedule.WebForms
 {
@@ -59,6 +60,27 @@ namespace VelocityCoders.FitnessSchedule.WebForms
                 labelControl.Text += messageToDisplay;
             else
                 labelControl.Text = messageToDisplay;
+        }
+        /// <summary>
+        /// Sets the Site2Column master page's main navigation property.Highlights to user what section of the application.
+        /// </summary>
+        /// <param name="masterNavigationEnum"></param>
+        public void SetMasterPageNavigation(MasterNavigation masterNavigationEnum)
+        {
+            VelocityCoders.FitnessSchedule.WebForms.MasterPages.Site2Column myMasterPage
+                = (VelocityCoders.FitnessSchedule.WebForms.MasterPages.Site2Column)Page.Master;
+            myMasterPage.SelectedMasterPageNavigation = masterNavigationEnum;
+        }
+        public void ValidateInstructorId(string redirectPage)
+        {
+            if (this.InstructorId > 0)
+            {
+                //InstructorId exists - check if its valid record in the database
+            }
+            else
+            {
+                Response.Redirect(redirectPage);
+            }
         }
 
     }

@@ -14,7 +14,6 @@
             Please click <asp:HyperLink runat="server" ID="PreviousPageLink" Text="HERE" CssClass="HeaderText" />
             to go back to our previoue page.
         </p>
-        </br>
         <div class="HeaderText">Support Information</div>
         <p>
             If the error contineous and you need assistance immediately,
