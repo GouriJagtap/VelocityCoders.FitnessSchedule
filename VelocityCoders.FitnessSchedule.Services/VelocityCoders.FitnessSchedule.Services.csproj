@@ -89,18 +89,28 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EntityLookupService.svc" />
     <Content Include="HelloWorld.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\DTOCollections\ServiceCollections.cs" />
+    <Compile Include="DataContracts\EntityDTO.cs" />
+    <Compile Include="DataContracts\EntityTypeDTO.cs" />
+    <Compile Include="EntityLookupService.svc.cs">
+      <DependentUpon>EntityLookupService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Faults\EntityLookupServiceFault.cs" />
     <Compile Include="HelloWorld.svc.cs">
       <DependentUpon>HelloWorld.svc</DependentUpon>
     </Compile>
+    <Compile Include="IEntityTypeLookupService.cs" />
     <Compile Include="IHelloWorld.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ServiceContracts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -113,6 +123,23 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jagtap.Common\Jagtap.Common.csproj">
+      <Project>{aacf6da2-8bb4-4620-840a-e622a78ebd41}</Project>
+      <Name>Jagtap.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VelocityCoders.FitnessSchedule.BLL\VelocityCoders.FitnessSchedule.BLL.csproj">
+      <Project>{57f26fc4-b3e1-476d-b9ce-e0c29f6c857c}</Project>
+      <Name>VelocityCoders.FitnessSchedule.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VelocityCoders.FitnessSchedule.Models\VelocityCoders.FitnessSchedule.Models.csproj">
+      <Project>{b4c25311-4121-45ce-b175-70cdf01f4e52}</Project>
+      <Name>VelocityCoders.FitnessSchedule.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

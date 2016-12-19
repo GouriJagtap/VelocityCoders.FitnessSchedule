@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EntityLookupService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51359/EntityLookupService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51359/EntityLookupService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51359/EntityLookupService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessSchedule.Services.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:51359/EntityLookupService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessSchedule.Services.Faults" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEntityTypeLookupService_GetEntityCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntityCollection" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_GetEntityCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntityCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_GetEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_GetEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_getEntityTypeCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEntityTypeCollection" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_getEntityTypeCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEntityTypeCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_DeleteEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_DeleteEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_DeleteEntityType_EntityLookupServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessSchedule.Services.Faults" name="detail" element="q1:EntityLookupServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_SaveEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_SaveEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntityTypeLookupService_SaveEntityType_EntityLookupServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessSchedule.Services.Faults" name="detail" element="q2:EntityLookupServiceFault" />
+  </wsdl:message>
+  <wsdl:portType name="IEntityTypeLookupService">
+    <wsdl:operation name="GetEntityCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntityTypeLookupService/GetEntityCollection" message="tns:IEntityTypeLookupService_GetEntityCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntityTypeLookupService/GetEntityCollectionResponse" message="tns:IEntityTypeLookupService_GetEntityCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntityTypeLookupService/GetEntityType" message="tns:IEntityTypeLookupService_GetEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntityTypeLookupService/GetEntityTypeResponse" message="tns:IEntityTypeLookupService_GetEntityType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEntityTypeCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntityTypeLookupService/getEntityTypeCollection" message="tns:IEntityTypeLookupService_getEntityTypeCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntityTypeLookupService/getEntityTypeCollectionResponse" message="tns:IEntityTypeLookupService_getEntityTypeCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntityType" message="tns:IEntityTypeLookupService_DeleteEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntityTypeResponse" message="tns:IEntityTypeLookupService_DeleteEntityType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntityTypeEntityLookupServiceFaultFault" name="EntityLookupServiceFaultFault" message="tns:IEntityTypeLookupService_DeleteEntityType_EntityLookupServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntityTypeLookupService/SaveEntityType" message="tns:IEntityTypeLookupService_SaveEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntityTypeLookupService/SaveEntityTypeResponse" message="tns:IEntityTypeLookupService_SaveEntityType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IEntityTypeLookupService/SaveEntityTypeEntityLookupServiceFaultFault" name="EntityLookupServiceFaultFault" message="tns:IEntityTypeLookupService_SaveEntityType_EntityLookupServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEntityTypeLookupService" type="tns:IEntityTypeLookupService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEntityCollection">
+      <soap:operation soapAction="http://tempuri.org/IEntityTypeLookupService/GetEntityCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityType">
+      <soap:operation soapAction="http://tempuri.org/IEntityTypeLookupService/GetEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntityTypeCollection">
+      <soap:operation soapAction="http://tempuri.org/IEntityTypeLookupService/getEntityTypeCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityType">
+      <soap:operation soapAction="http://tempuri.org/IEntityTypeLookupService/DeleteEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EntityLookupServiceFaultFault">
+        <soap:fault use="literal" name="EntityLookupServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntityType">
+      <soap:operation soapAction="http://tempuri.org/IEntityTypeLookupService/SaveEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EntityLookupServiceFaultFault">
+        <soap:fault use="literal" name="EntityLookupServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EntityLookupService">
+    <wsdl:port name="BasicHttpBinding_IEntityTypeLookupService" binding="tns:BasicHttpBinding_IEntityTypeLookupService">
+      <soap:address location="http://localhost:51359/EntityLookupService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

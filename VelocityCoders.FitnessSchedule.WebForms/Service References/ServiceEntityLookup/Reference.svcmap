@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bef91de3-4987-47de-9d6f-28aaa3f36364" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51359/EntityLookupService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EntityLookupService.disco" MetadataType="Disco" ID="89792f9a-2ed2-469e-9f7f-a8f8b75ece33" SourceId="1" SourceUrl="http://localhost:51359/EntityLookupService.svc?disco" />
+    <MetadataFile FileName="EntityLookupService.xsd" MetadataType="Schema" ID="7246b53e-ff5c-4f55-ad49-8537582caab8" SourceId="1" SourceUrl="http://localhost:51359/EntityLookupService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EntityLookupService.wsdl" MetadataType="Wsdl" ID="68c088da-b125-4aa9-9210-517483acd33d" SourceId="1" SourceUrl="http://localhost:51359/EntityLookupService.svc?wsdl" />
+    <MetadataFile FileName="EntityLookupService1.xsd" MetadataType="Schema" ID="49e95aeb-520e-42f7-b4e6-f3378f63f1a4" SourceId="1" SourceUrl="http://localhost:51359/EntityLookupService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EntityLookupService2.xsd" MetadataType="Schema" ID="1d437f0d-adcc-42d5-a932-c1c1396046f1" SourceId="1" SourceUrl="http://localhost:51359/EntityLookupService.svc?xsd=xsd3" />
+    <MetadataFile FileName="EntityLookupService3.xsd" MetadataType="Schema" ID="30705128-c086-48b6-bfbc-69989328b648" SourceId="1" SourceUrl="http://localhost:51359/EntityLookupService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -7,7 +7,7 @@ using Jagtap.Common;
 
 namespace VelocityCoders.FitnessSchedule.Models.Collections
 {
-    class EntityCollection : BaseCollection<Entity>
+     public class EntityCollection : BaseCollection<Entity>
     {
     }
 }

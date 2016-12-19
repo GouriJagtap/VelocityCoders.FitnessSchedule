@@ -19,6 +19,13 @@ namespace VelocityCoders.FitnessSchedule.WebForms
                 return this.GetQuerryStringNumber("InstructorId");
             }
         }
+        public int EntityId
+        {
+            get
+            {
+                return this.GetQuerryStringNumber("EntityId");
+            }
+        }
         #endregion
 
         /// <summary>
@@ -82,6 +89,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms
                 Response.Redirect(redirectPage);
             }
         }
+
 
     }
    

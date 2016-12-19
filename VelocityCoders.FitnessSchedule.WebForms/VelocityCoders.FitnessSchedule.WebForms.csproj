@@ -119,6 +119,8 @@
     <Content Include="Admin\InstructorFolder\InstructorList.aspx" />
     <Content Include="Admin\InstructorList.aspx" />
     <Content Include="Admin\LookupTablesArea\Default.aspx" />
+    <Content Include="Admin\LookupTablesArea\EntityLookup.aspx" />
+    <Content Include="Admin\LookupTablesArea\EntityTypeLookup.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
     <Content Include="Admin\ScheduleArea\Default.aspx" />
@@ -140,6 +142,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MasterPages\Site2Column.Master" />
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.wsdl" />
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ServiceHelloWorld\HelloWorld.wsdl" />
     <None Include="Service References\ServiceHelloWorld\HelloWorld.xsd">
       <SubType>Designer</SubType>
@@ -167,13 +185,23 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.disco" />
+    <None Include="Service References\ServiceEntityLookup\configuration91.svcinfo" />
+    <None Include="Service References\ServiceEntityLookup\configuration.svcinfo" />
+    <None Include="Service References\ServiceEntityLookup\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceExample.aspx" />
     <Content Include="StringTest.aspx" />
     <Content Include="TemperatureConversion.aspx" />
     <Content Include="Thanks.aspx" />
     <Content Include="UserControls\InstructionNavigationControl.ascx" />
+    <Content Include="UserControls\LookupTablesNavigationControl.ascx" />
     <Content Include="UserControls\MessageBrokenRulesControl.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -289,6 +317,20 @@
     <Compile Include="Admin\LookupTablesArea\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityLookup.aspx.cs">
+      <DependentUpon>EntityLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityLookup.aspx.designer.cs">
+      <DependentUpon>EntityLookup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityTypeLookup.aspx.cs">
+      <DependentUpon>EntityTypeLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityTypeLookup.aspx.designer.cs">
+      <DependentUpon>EntityTypeLookup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PersonDetails.aspx.cs">
       <DependentUpon>PersonDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -327,6 +369,7 @@
     <Compile Include="Custom\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Custom\Utilities.cs" />
     <Compile Include="D-04-Instance-vs-Static-LAB.aspx.cs">
       <DependentUpon>D-04-Instance-vs-Static-LAB.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -334,6 +377,7 @@
     <Compile Include="D-04-Instance-vs-Static-LAB.aspx.designer.cs">
       <DependentUpon>D-04-Instance-vs-Static-LAB.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Enums\Enum.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Enums\MasterNavigation.cs" />
     <Compile Include="Error.aspx.cs">
@@ -382,6 +426,11 @@
       <DependentUpon>Site2Column.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceEntityLookup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceHelloWorld\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -421,6 +470,13 @@
     </Compile>
     <Compile Include="UserControls\InstructionNavigationControl.ascx.designer.cs">
       <DependentUpon>InstructionNavigationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LookupTablesNavigationControl.ascx.cs">
+      <DependentUpon>LookupTablesNavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LookupTablesNavigationControl.ascx.designer.cs">
+      <DependentUpon>LookupTablesNavigationControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MessageBrokenRulesControl.ascx.cs">
       <DependentUpon>MessageBrokenRulesControl.ascx</DependentUpon>
@@ -464,6 +520,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceEntityLookup\" />
     <WCFMetadataStorage Include="Service References\ServiceHelloWorld\" />
   </ItemGroup>
   <PropertyGroup>

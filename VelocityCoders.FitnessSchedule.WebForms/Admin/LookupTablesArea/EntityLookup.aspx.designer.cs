@@ -10,6 +10,15 @@
 namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea {
     
     
-    public partial class Default {
+    public partial class EntityLookup {
+        
+        /// <summary>
+        /// lookupTablesNavigation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::VelocityCoders.FitnessSchedule.WebForms.UserControls.LookupTablesNavigationControl lookupTablesNavigation;
     }
 }
