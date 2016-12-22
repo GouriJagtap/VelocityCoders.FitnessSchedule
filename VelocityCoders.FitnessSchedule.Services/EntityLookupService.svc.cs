@@ -10,6 +10,7 @@ using VelocityCoders.FitnessSchedule.Manager;
 using VelocityCoders.FitnessSchedule.Models;
 using VelocityCoders.FitnessSchedule.Models.Collections;
 using Jagtap.Common;
+using VelocityCoders.FitnessSchedule.Services.ServiceContracts;
 
 namespace VelocityCoders.FitnessSchedule.Services
 {
@@ -49,16 +50,41 @@ namespace VelocityCoders.FitnessSchedule.Services
                 try
                 {
                     if (!EntityTypeManager.Delete(entityTypeId))
-                        throw new FaultException<EntityLookupServiceFault>(new EntityLookupServiceFault("No records were affected"), "Delete failed");
+                        throw new FaultException<EntityLookupServiceFault>(
+                            new EntityLookupServiceFault("No records were affected"), "Delete failed");
                 }
                 catch (BLLException ex)
                 {
-                    throw new FaultException<EntityLookupServiceFault>(new EntityLookupServiceFault(ex.Message), "Validation failed");
+                    throw new FaultException<EntityLookupServiceFault>(
+                        new EntityLookupServiceFault(ex.Message), "Validation failed");
                 }
             }
             else
-                throw new FaultException<EntityLookupServiceFault>(new EntityLookupServiceFault("Entity TypeId was not valid"), "validation failed");
+                throw new FaultException<EntityLookupServiceFault>(
+                    new EntityLookupServiceFault("Entity TypeId was not valid"), "validation failed");
         }
+
+         public void DeleteEntity(int entityId)
+        {
+            if (entityId > 0)
+            {
+                try
+                {
+                    if (!EntityManager.Delete(entityId))
+                        throw new FaultException<EntityLookupServiceFault>(
+                            new EntityLookupServiceFault("No records were affected"), "Delete failed");
+                }
+                catch (BLLException ex)
+                {
+                    throw new FaultException<EntityLookupServiceFault>(
+                        new EntityLookupServiceFault(ex.Message), "Validation failed");
+                }
+            }
+            else
+                throw new FaultException<EntityLookupServiceFault>(
+                    new EntityLookupServiceFault("EntityId was not valid"), "validation failed");
+        }
+
 
         public void SaveEntityType(EntityTypeDTO entityTypeToSave)
         {
@@ -67,7 +93,8 @@ namespace VelocityCoders.FitnessSchedule.Services
                 if (entityTypeToSave.EntityId > 0)
                 {
                     if (string.IsNullOrEmpty(entityTypeToSave.EntityTypeName))
-                        throw new FaultException<EntityLookupServiceFault>(new EntityLookupServiceFault("EntityType value is required"), "Validation Failed");
+                        throw new FaultException<EntityLookupServiceFault>(
+                            new EntityLookupServiceFault("EntityType value is required"), "Validation Failed");
                     else
                     {
                         try
@@ -76,16 +103,19 @@ namespace VelocityCoders.FitnessSchedule.Services
                         }
                         catch (BLLException ex)
                         {
-                            throw new FaultException<EntityLookupServiceFault>(new EntityLookupServiceFault(ex.Message), "Save Failed");
+                            throw new FaultException<EntityLookupServiceFault>(
+                                new EntityLookupServiceFault(ex.Message), "Save Failed");
                         }
                     }
                 }
                 else
-                    throw new FaultException<EntityLookupServiceFault>(new EntityLookupServiceFault("Entity Id is required"), "Validation Failed");
+                    throw new FaultException<EntityLookupServiceFault>(
+                        new EntityLookupServiceFault("Entity Id is required"), "Validation Failed");
 
             }
             else
-                throw new FaultException<EntityLookupServiceFault>(new EntityLookupServiceFault("EntityType object was invalid"), "Validation Failed");
+                throw new FaultException<EntityLookupServiceFault>(
+                    new EntityLookupServiceFault("EntityType object was invalid"), "Validation Failed");
         }
 
         #endregion
@@ -177,10 +207,10 @@ namespace VelocityCoders.FitnessSchedule.Services
             return tempItem;
         }
 
-        public EntityTypeDTOCollection getEntityTypeCollection(int entityId)
-        {
-            throw new NotImplementedException();
-        }
+        //public EntityTypeDTOCollection getEntityTypeCollection(int entityId)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         #endregion
 

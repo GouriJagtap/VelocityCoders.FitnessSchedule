@@ -27,17 +27,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getEntityTypeCollection">
+  <xs:element name="GetEntityTypeCollection">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="entityId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getEntityTypeCollectionResponse">
+  <xs:element name="GetEntityTypeCollectionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessSchedule.Services.DataContracts" minOccurs="0" name="getEntityTypeCollectionResult" nillable="true" type="q3:EntityTypeDTOCollection" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessSchedule.Services.DataContracts" minOccurs="0" name="GetEntityTypeCollectionResult" nillable="true" type="q3:EntityTypeDTOCollection" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,6 +49,18 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteEntityTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntityResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

@@ -7,7 +7,7 @@ using System.ServiceModel;
 using VelocityCoders.FitnessSchedule.Services.DataContracts;
 using VelocityCoders.FitnessSchedule.Services.Faults;
 
-namespace VelocityCoders.FitnessSchedule.Services
+namespace VelocityCoders.FitnessSchedule.Services.ServiceContracts
 {
     [ServiceContract]
     interface IEntityTypeLookupService
@@ -25,11 +25,15 @@ namespace VelocityCoders.FitnessSchedule.Services
         EntityTypeDTO GetEntityType(int entityTypeId);
 
         [OperationContract]
-        EntityTypeDTOCollection getEntityTypeCollection(int entityId);
+        EntityTypeDTOCollection GetEntityTypeCollection(int entityId);
 
         [OperationContract]
         [FaultContract(typeof(EntityLookupServiceFault))]
         void DeleteEntityType(int entityTypeId);
+
+        [OperationContract]
+        [FaultContract(typeof(EntityLookupServiceFault))]
+        void DeleteEntity(int entityId);
 
         [OperationContract]
         [FaultContract(typeof(EntityLookupServiceFault))]

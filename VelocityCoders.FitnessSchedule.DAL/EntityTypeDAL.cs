@@ -87,12 +87,12 @@ namespace VelocityCoders.FitnessSchedule.DAL
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
-                using (SqlCommand myCommand = new SqlCommand("usp_GetEntityType", myConnection))
+                using (SqlCommand myCommand = new SqlCommand("[dbo].[usp_GetEntityType]", myConnection))
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
 
                     myCommand.Parameters.AddWithValue("@QueryId", SelectTypeEnum.GetCollectionById);
-                    myCommand.Parameters.AddWithValue("@EntityName", entityId.ToString());
+                    myCommand.Parameters.AddWithValue("@EntityId", entityId.ToString());
 
                     myConnection.Open();
 
@@ -216,7 +216,7 @@ namespace VelocityCoders.FitnessSchedule.DAL
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
                     myCommand.Parameters.AddWithValue("@QueryId", ExecuteTypeEnum.DeleteItem);
-                    myCommand.Parameters.AddWithValue("@EmailId", entityTypeId);
+                    myCommand.Parameters.AddWithValue("@EntityTypeId", entityTypeId);
 
                     MyConnection.Open();
                     result = myCommand.ExecuteNonQuery();

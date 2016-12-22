@@ -22,15 +22,6 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea {
         protected global::VelocityCoders.FitnessSchedule.WebForms.UserControls.LookupTablesNavigationControl lookupTablesNavigation;
         
         /// <summary>
-        /// HiddenEntityTypeId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenEntityTypeId;
-        
-        /// <summary>
         /// customMessageArea control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::VelocityCoders.FitnessSchedule.WebForms.UserControls.MessageBrokenRulesControl customMessageArea;
+        
+        /// <summary>
+        /// HiddenEntityTypeId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenEntityTypeId;
         
         /// <summary>
         /// drpEntity control.

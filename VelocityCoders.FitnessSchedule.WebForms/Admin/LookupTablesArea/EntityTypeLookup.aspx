@@ -17,12 +17,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <CustomVelocityCoders:LookupTablesNavigation runat="server" ID="lookupTablesNavigation" />
-     <asp:HiddenField runat="server" ID="HiddenEntityTypeId" Value="0" />
+     
       <div id="InstructorContainer" class="BorderRadiusBottom">
           <CustomVelocityCoders:MessageArea runat="server" ID="customMessageArea" visible="false" />
 
       <div class="SectionMessageArea SmallText"><label class="Required">*</label>=Required Field</div>
-
+          <asp:HiddenField runat="server" ID="HiddenEntityTypeId" Value="0" />
         <table>
             <tr>
                 <td>

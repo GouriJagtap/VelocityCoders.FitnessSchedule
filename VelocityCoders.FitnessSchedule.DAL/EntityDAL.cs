@@ -65,5 +65,28 @@ namespace VelocityCoders.FitnessSchedule.DAL
             return myObject;
         }
 
+        public static bool Delete(int entityId)
+        {
+            int result = 0;
+
+            using (SqlConnection MyConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteEntity", MyConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", ExecuteTypeEnum.DeleteItem);
+                    myCommand.Parameters.AddWithValue("@EntityId", entityId);
+
+                    MyConnection.Open();
+                    result = myCommand.ExecuteNonQuery();
+
+                }
+                MyConnection.Close();
+
+            }
+            return result > 0;
+
+        }
+
     }
 }

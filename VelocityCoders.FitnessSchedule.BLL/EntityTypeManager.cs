@@ -54,8 +54,8 @@ namespace VelocityCoders.FitnessSchedule.Manager
         }
         public static EntityTypeCollection GetCollection(int entityId)
         {
-            EntityTypeCollection entityTyoeCollection = EntityTypeDAL.GetCollection(entityId);
-            return entityTyoeCollection;
+            EntityTypeCollection entityTypeCollection = EntityTypeDAL.GetCollection(entityId);
+            return entityTypeCollection;
         }
         #endregion
 

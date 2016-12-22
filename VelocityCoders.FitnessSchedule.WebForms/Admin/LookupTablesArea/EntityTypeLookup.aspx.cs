@@ -16,10 +16,10 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
         protected void Page_Load(object sender, EventArgs e)
         {
             base.SetMasterPageNavigation(MasterNavigation.LookupTables);
-            this.BindNavigation();
+          this.BindNavigation();
 
             if(!IsPostBack)
-            {
+            {  
                 this.BindEntityDropDown();
                 if(base.EntityId >0)
                 {
@@ -87,7 +87,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
         private void ReloadPage(int entityId)
         {
             if (entityId > 0)
-                Response.Redirect("EntityTypeLookup.aspx?EntityId=" + entityId.ToString());
+                Response.Redirect("EntityTypeLookup.aspx?EntityId="+ entityId.ToString());
             else
                 Response.Redirect("EntityTypeLookup.aspx");
         }
@@ -147,7 +147,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
                     new ServiceEntityLookup.EntityTypeLookupServiceClient())
                 {
                     ServiceEntityLookup.EntityTypeDTOCollection entityTypeCollection =
-                        entityLookupService.getEntityTypeCollection(entityId);
+                        entityLookupService.GetEntityTypeCollection(entityId);
                     if(entityTypeCollection != null)
                     {
                         rptLookupList.DataSource = entityTypeCollection;
@@ -161,6 +161,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
         {
             lookupTablesNavigation.CurrentNavigationLink = LookupTablesNavigation.EntityType;
         }
+
         private void BindUpdateInfo(int entityTypeId)
         {
             using (ServiceEntityLookup.EntityTypeLookupServiceClient entityLookupService =
@@ -193,10 +194,12 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
                 }
             }
         }
+
         private void DisplayLocalMessage(string message)
         {
             this.DisplayLocalMessage(message, new BrokenRuleCollection());
         }
+
         private void DisplayLocalMessage(string message, BrokenRuleCollection brokenRules)
         {
             customMessageArea.Visible = true;
@@ -232,7 +235,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
             switch (e.CommandName)
             {
                 case "Edit":
-                    this.BindUpdateInfo(e.CommandArgument.ToString());
+                    this.BindUpdateInfo(e.CommandArgument.ToString().ToInt());
                     break;
                 case "Delete":
                     this.DeleteItem(e.CommandArgument.ToString().ToInt());
@@ -240,11 +243,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
             }
         }
 
-        private void BindUpdateInfo(string v)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         protected void LookupList_OnItemDataBound(Object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)

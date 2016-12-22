@@ -13,7 +13,10 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             this.BindNavigation();
+        
+           
         }
 
         #region BIND CONTROLS

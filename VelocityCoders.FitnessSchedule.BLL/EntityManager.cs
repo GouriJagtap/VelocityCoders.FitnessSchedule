@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VelocityCoders.FitnessSchedule.Models.Collections;
 using VelocityCoders.FitnessSchedule.DAL;
+using Jagtap.Common;
 
 namespace VelocityCoders.FitnessSchedule.Manager
 {
@@ -17,5 +18,16 @@ namespace VelocityCoders.FitnessSchedule.Manager
             return EntityDAL.GetCollection();
         }
         #endregion
+
+        public static bool Delete(int entityId)
+        {
+            if (entityId > 0)
+            {
+                return EntityDAL.Delete(entityId);
+            }
+            else
+                throw new BLLException("Delete Failed. Entity Type Id is invalid." + entityId.ToString());
+
+        }
     }
 }

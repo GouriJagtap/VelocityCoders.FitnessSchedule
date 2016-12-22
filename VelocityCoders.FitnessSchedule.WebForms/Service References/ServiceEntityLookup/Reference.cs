@@ -263,11 +263,11 @@ namespace VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/GetEntityType", ReplyAction="http://tempuri.org/IEntityTypeLookupService/GetEntityTypeResponse")]
         System.Threading.Tasks.Task<VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTO> GetEntityTypeAsync(int entityTypeId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/getEntityTypeCollection", ReplyAction="http://tempuri.org/IEntityTypeLookupService/getEntityTypeCollectionResponse")]
-        VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTOCollection getEntityTypeCollection(int entityId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/GetEntityTypeCollection", ReplyAction="http://tempuri.org/IEntityTypeLookupService/GetEntityTypeCollectionResponse")]
+        VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTOCollection GetEntityTypeCollection(int entityId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/getEntityTypeCollection", ReplyAction="http://tempuri.org/IEntityTypeLookupService/getEntityTypeCollectionResponse")]
-        System.Threading.Tasks.Task<VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTOCollection> getEntityTypeCollectionAsync(int entityId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/GetEntityTypeCollection", ReplyAction="http://tempuri.org/IEntityTypeLookupService/GetEntityTypeCollectionResponse")]
+        System.Threading.Tasks.Task<VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTOCollection> GetEntityTypeCollectionAsync(int entityId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntityType", ReplyAction="http://tempuri.org/IEntityTypeLookupService/DeleteEntityTypeResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityLookupServiceFault), Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntityTypeEntityLookupServiceFa" +
@@ -277,6 +277,15 @@ namespace VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntityType", ReplyAction="http://tempuri.org/IEntityTypeLookupService/DeleteEntityTypeResponse")]
         System.Threading.Tasks.Task DeleteEntityTypeAsync(int entityTypeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntity", ReplyAction="http://tempuri.org/IEntityTypeLookupService/DeleteEntityResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityLookupServiceFault), Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntityEntityLookupServiceFaultF" +
+            "ault", Name="EntityLookupServiceFault", Namespace="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessSchedule.Services.F" +
+            "aults")]
+        void DeleteEntity(int entityId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/DeleteEntity", ReplyAction="http://tempuri.org/IEntityTypeLookupService/DeleteEntityResponse")]
+        System.Threading.Tasks.Task DeleteEntityAsync(int entityId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityTypeLookupService/SaveEntityType", ReplyAction="http://tempuri.org/IEntityTypeLookupService/SaveEntityTypeResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityLookupServiceFault), Action="http://tempuri.org/IEntityTypeLookupService/SaveEntityTypeEntityLookupServiceFaul" +
@@ -331,12 +340,12 @@ namespace VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup {
             return base.Channel.GetEntityTypeAsync(entityTypeId);
         }
         
-        public VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTOCollection getEntityTypeCollection(int entityId) {
-            return base.Channel.getEntityTypeCollection(entityId);
+        public VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTOCollection GetEntityTypeCollection(int entityId) {
+            return base.Channel.GetEntityTypeCollection(entityId);
         }
         
-        public System.Threading.Tasks.Task<VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTOCollection> getEntityTypeCollectionAsync(int entityId) {
-            return base.Channel.getEntityTypeCollectionAsync(entityId);
+        public System.Threading.Tasks.Task<VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTOCollection> GetEntityTypeCollectionAsync(int entityId) {
+            return base.Channel.GetEntityTypeCollectionAsync(entityId);
         }
         
         public void DeleteEntityType(int entityTypeId) {
@@ -345,6 +354,14 @@ namespace VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup {
         
         public System.Threading.Tasks.Task DeleteEntityTypeAsync(int entityTypeId) {
             return base.Channel.DeleteEntityTypeAsync(entityTypeId);
+        }
+        
+        public void DeleteEntity(int entityId) {
+            base.Channel.DeleteEntity(entityId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteEntityAsync(int entityId) {
+            return base.Channel.DeleteEntityAsync(entityId);
         }
         
         public void SaveEntityType(VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTO entityTypeToSave) {

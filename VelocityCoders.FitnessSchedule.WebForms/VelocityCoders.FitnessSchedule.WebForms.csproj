@@ -155,9 +155,6 @@
     <None Include="Service References\ServiceEntityLookup\EntityLookupService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\ServiceHelloWorld\HelloWorld.wsdl" />
     <None Include="Service References\ServiceHelloWorld\HelloWorld.xsd">
       <SubType>Designer</SubType>
