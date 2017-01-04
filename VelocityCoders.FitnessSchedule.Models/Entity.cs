@@ -29,7 +29,7 @@ namespace VelocityCoders.FitnessSchedule.Models
         }
         public override string GetName()
         {
-            return "Name from sub class :" ;
+            return "Name from sub class :";
             throw new NotImplementedException();
         }
 

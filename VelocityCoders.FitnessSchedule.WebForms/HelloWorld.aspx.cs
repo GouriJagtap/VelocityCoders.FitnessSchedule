@@ -52,7 +52,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms
         }
         private void PersonExample()
         {
-            Person newPerson = new Models.Person("John", "Miller", "Male");
+            Person newPerson = new Person("John", "Miller", "Male");
             Person newPerson1 = new Person();
             lblDisplayMessage.Text = newPerson1.Name;
             //lblDisplayMessage.Text = newPerson1.GetName();

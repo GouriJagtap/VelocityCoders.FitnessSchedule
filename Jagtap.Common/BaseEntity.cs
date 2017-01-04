@@ -10,14 +10,14 @@ namespace Jagtap.Common
     {
         public abstract T ID { get; set; }
 
-        // Abstract property that is a read only because it has only get;
+        //Abstract property that is a read only because it has only get;
         public abstract string Name { get; }
 
         // abstract method doesnt have a body its just a declaration
 
         public abstract string GetName();
-        
-        //Virtual method in the abstract class
+
+        ////Virtual method in the abstract class
 
         public virtual string GetName1()
         {

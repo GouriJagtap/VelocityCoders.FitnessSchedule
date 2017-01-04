@@ -10,15 +10,15 @@
 namespace VelocityCoders.FitnessSchedule.WebForms.Admin.GymLocationArea {
     
     
-    public partial class Default {
+    public partial class GymList {
         
         /// <summary>
-        /// gymLocationNavigation control.
+        /// rptEmailList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::VelocityCoders.FitnessSchedule.WebForms.UserControls.GymLocationNavigationControl gymLocationNavigation;
+        protected global::System.Web.UI.WebControls.Repeater rptEmailList;
     }
 }

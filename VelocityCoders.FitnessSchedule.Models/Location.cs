@@ -36,14 +36,15 @@ namespace VelocityCoders.FitnessSchedule.Models
         }
 
         public int LocationId { get; set; }
-        public int StateId { get; set; }
-        public int GymId { get; set; }
+      
         public string LocationName { get; set; }
         public string Address01 { get; set; }
         public string Address02 { get; set; }
         public string City { get; set; }
         public int ZipCode { get; set; }
 
+        public int StateId { get; set; }
+        public int GymId { get; set; }
         public override int ID
         {
             get

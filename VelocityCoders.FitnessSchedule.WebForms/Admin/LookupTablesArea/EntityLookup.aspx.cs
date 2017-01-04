@@ -13,9 +13,10 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.LookupTablesArea
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            this.BindNavigation();
-        
+            if (!IsPostBack)
+            {
+                this.BindNavigation();
+            }
            
         }
 

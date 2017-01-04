@@ -11,6 +11,7 @@ using Jagtap.Common.Helpers;
 using Jagtap.Common.Extensions;
 using VelocityCoders.FitnessSchedule.Models.Enums;
 
+
 namespace VelocityCoders.FitnessSchedule.WebForms
 {
     public partial class HelloWorld1 : System.Web.UI.Page
@@ -107,7 +108,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms
         {
 
             //Instructor inst = new Instructor()
-            Student stnt = new Models.Student()
+            Student stnt = new Student()
             {
                 FirstName = "John",
                 LastName = "Duffy",

@@ -40,7 +40,7 @@
                             <a href="/Admin/ScheduleArea/">ScheduleArea</a>
                         </li>
                         <li runat="server" id="LookupTables">
-                            <a href="/Admin/LookupTablesArea/EntityTypeLookup.aspx">Lookup Tables</a>
+                            <a href="/Admin/LookupTablesArea/">Lookup Tables</a>
                         </li>
                     </ul>
                </div>

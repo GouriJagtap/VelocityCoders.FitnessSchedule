@@ -47,7 +47,9 @@
     <Compile Include="EmailAddressManager.cs" />
     <Compile Include="EntityManager.cs" />
     <Compile Include="EntityTypeManager.cs" />
+    <Compile Include="GymManager.cs" />
     <Compile Include="InstructorManager.cs" />
+    <Compile Include="LocationManager.cs" />
     <Compile Include="PersonManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

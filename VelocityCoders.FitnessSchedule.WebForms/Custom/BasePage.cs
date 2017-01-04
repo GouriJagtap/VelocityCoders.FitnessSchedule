@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI.WebControls;
 using VelocityCoders.FitnessSchedule.Webforms;
 
@@ -10,6 +11,27 @@ namespace VelocityCoders.FitnessSchedule.WebForms
 {
     public class BasePage : System.Web.UI.Page
     {
+
+        #region JSON SERIALIZATION
+
+        public T GetModelItem<T>(string json)
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            T modelItem = serializer.Deserialize<T>(json);
+
+            return modelItem;
+        }
+
+        public List<T> GetModelList<T>(string json)
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            List<T> modelList = serializer.Deserialize<List<T>>(json);
+
+            return modelList;
+        }
+
+        #endregion
+
         #region PROPERTIES
 
         public int InstructorId

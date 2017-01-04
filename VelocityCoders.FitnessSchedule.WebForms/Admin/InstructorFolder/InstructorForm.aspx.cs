@@ -12,6 +12,7 @@ using Jagtap.Common.Extensions;
 using Jagtap.Common;
 using VelocityCoders.FitnessSchedule.BLL;
 using VelocityCoders.FitnessSchedule.Webforms;
+using VelocityCoders.FitnessSchedule.Models.Enums;
 
 namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
 {
@@ -167,7 +168,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
 
         private void BindEmployeeType()
         {
-            EntityTypeCollection employeeList = EntityTypeManager.GetCollection(Models.Enums.EntityEnum.EmployeeType);
+            EntityTypeCollection employeeList = EntityTypeManager.GetCollection(EntityEnum.EmployeeType);
             drpEmployeeType.DataSource = employeeList;
             drpEmployeeType.DataBind();
 
