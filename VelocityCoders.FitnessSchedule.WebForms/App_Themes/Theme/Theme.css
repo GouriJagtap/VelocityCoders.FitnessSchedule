@@ -287,3 +287,11 @@ margin-right:auto;
     color:#990000;
     font-weight:bold;
 }
+
+.FormTable td{
+    height:30px;
+}
+
+.LineHeightMid{
+    line-height:28px;
+}

@@ -37,17 +37,22 @@ namespace VelocityCoders.FitnessSchedule.Models
             throw new NotImplementedException();
         }
 
+        #region Properties
         public int FitnessClassId { get; set; }
         public string FitnessClassName { get; set; }
-        public string Category { get; set; }
+        //public string Category { get; set; }
 
-       
+        #endregion
+      
+
         public override int ID
         {
-            set
+            get
             {
                 throw new NotImplementedException();
-            } get
+            }
+
+            set
             {
                 throw new NotImplementedException();
             }

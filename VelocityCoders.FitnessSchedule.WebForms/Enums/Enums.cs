@@ -27,7 +27,7 @@
         /// <summary>
         /// This Page contains the association between Instructor and FitnessClass
         /// </summary>
-        FitnessClass=40,
+        Instructor_Fitness_Class_Admin = 40,
         /// <summary>
         /// This Page contains the association between Instructor and Location
         /// </summary>

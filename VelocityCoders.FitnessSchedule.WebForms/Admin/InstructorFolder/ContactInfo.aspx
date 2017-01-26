@@ -16,7 +16,7 @@
                 %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HiddenField runat="server" ID="hdnEmailId" value="0" />
@@ -26,11 +26,18 @@
 
     <div id="InstructorContainer" class="BorderRadiusBottom">
 <%--       <div class="PageMessage"><asp:Label runat="server" ID="lblPageMessage" /></div>--%>
+
+         <script type="text/javascript" src="/scripts/ContactInfo.js"></script>
+
         <div class="SectionMessageArea SmallText"><label class="Required">*</label>=Required Field</div>
+        
            <table>
            <tr>
                <td><label class="Required"> Email Address:*</label></td>
-               <td> <asp:TextBox runat="server" ID="txtEmailAddress" MaxLength="50"/></td>
+               <td> <asp:TextBox runat="server"
+                                 ID="txtEmailAddress" 
+                                 MaxLength="50" 
+                                 CssClass="EmailAddressField"/></td>
            </tr>
            <tr>
                <td><label class="Required"> Email Type:*</label></td>
@@ -38,15 +45,18 @@
                    <asp:DropDownList runat="server" 
                                      ID="drpEmailType"
                                      DataTextField ="EntityTypeName"
-                                     DataValueField ="EntityTypeId" />
+                                     DataValueField ="EntityTypeId"
+                                     CssClass="EmailTypeField" />
                </td>
-           </tr>
+           </tr> 
+                
        </table>
         <div class="ContainerBar">
             <asp:Button runat="server"
                         Text ="Add Email"
                         ID="SaveButton"
-                        OnClick="Save_Click" />
+                        OnClick="Save_Click"
+                        OnClientClick="return ValidateClientForm()" />
          </div>
 
         </br>

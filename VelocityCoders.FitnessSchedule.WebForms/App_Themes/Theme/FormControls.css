@@ -36,3 +36,18 @@ input[type="submit"]{
     opacity:.7;
     cursor:pointer;
 }
+
+
+.ui-button{
+    vertical-align:top;
+}
+.ui-widget{
+    font-size:11px !important;
+}
+#FitnessClassPopupForm{
+    display:none;
+}
+
+#MessageArea{
+    display:none;
+}

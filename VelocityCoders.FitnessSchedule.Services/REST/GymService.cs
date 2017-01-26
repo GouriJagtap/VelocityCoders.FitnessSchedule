@@ -37,8 +37,13 @@ namespace VelocityCoders.FitnessSchedule.Services.REST
         {
             int gymId = GymManager.Save(this.DTOItemToGym(gymToSave));
 
-            Gym updatedItem = GymManager.GetItem(gymId);
-            return this.GymItemToDTO(updatedItem);
+            // Gym updatedItem = GymManager.GetItem(gymId);
+
+            gymToSave.Id = gymId;
+            return gymToSave;
+
+
+            //return this.GymItemToDTO(updatedItem);
 
         }
 

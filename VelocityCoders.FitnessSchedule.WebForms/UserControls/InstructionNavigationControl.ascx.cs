@@ -36,11 +36,11 @@ namespace VelocityCoders.FitnessSchedule.WebForms.UserControls
         /// </summary>
         private void BindInstructorNavigation()
         {
-           
+
             //Notes: Set up collection of list items for links
 
             ListItemCollection navigationList = new ListItemCollection();
-            
+
             //Notes: set array containing enum of instructor navigation values
 
             Array navigationValues = Enum.GetValues(typeof(InstructorNavigation));
@@ -49,13 +49,14 @@ namespace VelocityCoders.FitnessSchedule.WebForms.UserControls
 
             string instructorIdQueryString = "InstructorId=" + this.InstructorId.ToString();
 
-            if(InstructorId > 0)
+            if (InstructorId > 0)
             {
                 foreach (InstructorNavigation item in navigationValues)
                 {
-                    if(item != InstructorNavigation.None)
+                    if (item != InstructorNavigation.None)
                     {
-                        string displayValue = item.ToString();
+                        string displayValue = item.ToString().Replace("_", " ");
+                        string urlValue = item.ToString().Replace("_", " ");
 
                         if (item == this.CurrentNavigationLink)
                             navigationList.Add(new ListItem { Text = displayValue, Value = "", Enabled = false });
@@ -72,19 +73,41 @@ namespace VelocityCoders.FitnessSchedule.WebForms.UserControls
             else
             {
                 //notes: No InstructorId exists-set all links to inactive iterate over enum
-                foreach(InstructorNavigation item in navigationValues)
+                foreach (InstructorNavigation item in navigationValues)
                 {
-                    if(item != InstructorNavigation.None)
+                    if (item != InstructorNavigation.None)
                     {
+                        string displayValue = item.ToString().Replace("_", " ");
+                        string urlValue = item.ToString().Replace("_", " ");
+
+                        switch (item)
+                        {
+
+                            case InstructorNavigation.InstructorList:
+                            case InstructorNavigation.InstructorForm:
+
+                                navigationList.Add(new ListItem
+                                {
+                                    Text = displayValue,
+                                    Value = "/Admin/InstructorFolder/" + urlValue + ".aspx",
+                                    Enabled = true
+                                 });
+                        break;
+
+                        default:
+
                         navigationList.Add(new ListItem
                         {
-                            Text = item.ToString(),
-                            Value = "/Admin/InstructorFolder/" + item.ToString() + ".aspx?" + instructorIdQueryString,
+                            Text = displayValue,
+                            Value = "/Admin/InstructorFolder/" + urlValue + ".aspx?" + instructorIdQueryString,
                             Enabled = false
                         });
+                        break;
+                       }
                     }
                 }
             }
+        
             //Bind the list objects to front end control
 
             InstructionNavigationList.DataSource = navigationList;

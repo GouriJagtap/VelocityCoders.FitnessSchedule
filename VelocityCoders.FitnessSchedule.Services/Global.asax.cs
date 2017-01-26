@@ -16,6 +16,8 @@ namespace VelocityCoders.FitnessSchedule.Services
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteTable.Routes.Add(new ServiceRoute("GymService", new WebServiceHostFactory(), typeof(GymService)));
+            RouteTable.Routes.Add(new ServiceRoute("FitnessClassService", new WebServiceHostFactory(), typeof(FitnessClassService)));
+            RouteTable.Routes.Add(new ServiceRoute("InstructorService", new WebServiceHostFactory(), typeof(InstructorService)));
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace VelocityCoders.FitnessSchedule.Services
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
+            this.EnableCrossDomaininAjaxCall();
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
@@ -46,6 +48,21 @@ namespace VelocityCoders.FitnessSchedule.Services
         protected void Application_End(object sender, EventArgs e)
         {
 
+        }
+
+        private void EnableCrossDomaininAjaxCall()
+        {
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "http://fitnessschedule.deploy");
+
+            if(HttpContext.Current.Request.HttpMethod=="OPTIONS")
+            {
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods","GET, POST, PUT, DELETE");
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
+                HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "1728000");
+                HttpContext.Current.Response.End();
+            }
+                
+                
         }
     }
 }

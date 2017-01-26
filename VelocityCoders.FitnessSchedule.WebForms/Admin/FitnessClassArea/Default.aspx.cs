@@ -13,6 +13,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.FitnessClassArea
         protected void Page_Load(object sender, EventArgs e)
         {
             base.SetMasterPageNavigation(MasterNavigation.FitnessClass);
+
         }
     }
 }

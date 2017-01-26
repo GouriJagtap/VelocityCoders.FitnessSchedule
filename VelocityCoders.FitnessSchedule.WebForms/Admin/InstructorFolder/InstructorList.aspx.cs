@@ -16,7 +16,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorFolder
         {
             this.BindInstructorList();
         }
-        #region BIND iNSTRuCTOR LIST
+        #region BIND INSTRuCTOR LIST
 
         private void BindInstructorList()
         {

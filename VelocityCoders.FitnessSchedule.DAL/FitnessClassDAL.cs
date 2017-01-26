@@ -11,61 +11,104 @@ using System.Data;
 
 namespace VelocityCoders.FitnessSchedule.DAL
 {
-   public class FitnessClassDAL
+    public class FitnessClassDAL
     {
-           public static FitnessClassCollection GetCollection()
-            {
-                FitnessClassCollection tempList = null;
+        #region INSERT AND UPDATE
 
-                using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+        public static int Save(FitnessClass fitnessClassToSave)
+        {
+            int result = 0;
+
+            ExecuteTypeEnum queryId = ExecuteTypeEnum.InsertItem;
+
+            if (fitnessClassToSave.FitnessClassId > 0)
+                queryId = ExecuteTypeEnum.UpdateItem;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteFitnessClass", myConnection))
                 {
-                    using (SqlCommand myCommand = new SqlCommand("usp_GetFitnessClass", myConnection))
-                    {
-                        myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.CommandType = CommandType.StoredProcedure;
 
-                        myCommand.Parameters.AddWithValue("@QueryId", SelectTypeEnum.GetCollection);
+                    myCommand.Parameters.AddWithValue("@QueryId", queryId);
+                    myCommand.Parameters.AddWithValue("@FitnessClassId", fitnessClassToSave.FitnessClassId);
+                    myCommand.Parameters.AddWithValue("@FitnessClassName", fitnessClassToSave.FitnessClassName);
 
-                        myConnection.Open();
 
-                        using (SqlDataReader myReader = myCommand.ExecuteReader())
-                        {
-                            if (myReader.HasRows)
-                            {
-                                tempList = new FitnessClassCollection();
-                                while (myReader.Read())
-                                {
-                                    tempList.Add(FillDataRecord(myReader));
-                                }
 
-                            }
-                            myReader.Close();
-                        }
 
-                    }
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
+
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
                 }
-                return tempList;
+                myConnection.Close();
             }
+            return result;
+        }
+        #endregion
+        #region DELETE
 
-            private static FitnessClass FillDataRecord(IDataRecord myDataRecord)
+        public static bool Delete(int fitnessClassId)
+        {
+            int result = 0;
+
+            using (SqlConnection MyConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
-                FitnessClass myObject = new FitnessClass();
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteFitnessClass", MyConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", ExecuteTypeEnum.DeleteItem);
+                    myCommand.Parameters.AddWithValue("@FitnessClassId", fitnessClassId);
 
-                myObject.FitnessClassId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("FitnessClassId"));
+                    MyConnection.Open();
+                    result = myCommand.ExecuteNonQuery();
 
-                if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("FitnessClassName")))
-                    myObject.FitnessClassName = myDataRecord.GetString(myDataRecord.GetOrdinal("FitnessClassName"));
+                }
+                MyConnection.Close();
 
-                //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("InstructorId")))
-                //    myObject.EntityTypeName = myDataRecord.GetString(myDataRecord.GetOrdinal("EntityTypeName"));
-
-                //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EmailAddress")))
-                //    myObject.EmailAddress = myDataRecord.GetString(myDataRecord.GetOrdinal("EmailAddress"));
-
-                //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("CreateDate")))
-                //    myObject.FirstName = myDataRecord.GetString(myDataRecord.GetOrdinal("CreateDate"));
-
-                return myObject;
             }
+            return result > 0;
+
+        }
+        #endregion
+        public static FitnessClassCollection GetCollection()
+        {
+            FitnessClassCollection tempList = null;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_GetFitnessClass", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+
+                    myCommand.Parameters.AddWithValue("@QueryId", SelectTypeEnum.GetCollection);
+
+                    myConnection.Open();
+
+                    using (SqlDataReader myReader = myCommand.ExecuteReader())
+                    {
+                        if (myReader.HasRows)
+                        {
+                            tempList = new FitnessClassCollection();
+                            while (myReader.Read())
+                            {
+                                tempList.Add(FillDataRecord(myReader));
+                            }
+
+                        }
+                        myReader.Close();
+                    }
+
+                }
+            }
+            return tempList;
+        }
+
+
+
         public static FitnessClass GetItem(int fitnessClassId)
         {
             FitnessClass tempItem = null;
@@ -93,5 +136,20 @@ namespace VelocityCoders.FitnessSchedule.DAL
             return tempItem;
         }
 
+        #region Helper Mathod
+        private static FitnessClass FillDataRecord(IDataRecord myDataRecord)
+        {
+            FitnessClass myObject = new FitnessClass();
+
+            myObject.FitnessClassId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("FitnessClassId"));
+
+            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("FitnessClassName")))
+                myObject.FitnessClassName = myDataRecord.GetString(myDataRecord.GetOrdinal("FitnessClassName"));
+
+
+            return myObject;
+        }
+
+        #endregion
     }
 }

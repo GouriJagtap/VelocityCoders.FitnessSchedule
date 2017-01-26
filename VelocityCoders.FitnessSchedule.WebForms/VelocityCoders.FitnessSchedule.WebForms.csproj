@@ -127,6 +127,7 @@
     <Content Include="Admin\InstructorFolder\ContactInfo.aspx" />
     <Content Include="Admin\InstructorFolder\Index.aspx" />
     <Content Include="Admin\InstructorFolder\InstructorDetails.aspx" />
+    <Content Include="Admin\InstructorFolder\InstructorFitnessClassAdmin.aspx" />
     <Content Include="Admin\InstructorFolder\InstructorForm.aspx" />
     <Content Include="Admin\InstructorFolder\InstructorList.aspx" />
     <Content Include="Admin\InstructorList.aspx" />
@@ -141,20 +142,75 @@
     <Content Include="App_Themes\Theme\FormControls.css" />
     <Content Include="App_Themes\Theme\main.css" />
     <Content Include="App_Themes\Theme\Theme.css" />
+    <Content Include="App_Themes\Theme\Validation.css" />
     <Content Include="ArrayExample.aspx" />
     <Content Include="ConditiolanStatements.aspx" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="D-04-Instance-vs-Static-LAB.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="HelloWorld.js" />
     <Content Include="HTMLIntro.aspx" />
     <Content Include="Images\Agates.jpg" />
     <Content Include="Images\header-logo.png" />
+    <Content Include="App_Themes\Theme\jquery-ui.css" />
     <Content Include="LoopsExample.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MasterPages\Site2Column.Master" />
+    <Content Include="jquery-ui-themes-1.10.2.zip" />
+    <None Include="Properties\PublishProfiles\DeploytoCDrive.pubxml" />
+    <None Include="scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="scripts\InstructorFitnessClassAdmin.js" />
+    <Content Include="scripts\InstructorForm.js" />
+    <Content Include="scripts\JavaScript.js" />
+    <Content Include="scripts\jquery-3.1.1.js" />
+    <Content Include="scripts\jquery-3.1.1.min.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.1.1.min.map" />
     <None Include="Service References\ServiceEntityLookup\EntityLookupService.wsdl" />
     <None Include="Service References\ServiceEntityLookup\EntityLookupService.xsd">
       <SubType>Designer</SubType>
@@ -168,6 +224,9 @@
     <None Include="Service References\ServiceEntityLookup\EntityLookupService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ServiceHelloWorld\HelloWorld.wsdl" />
     <None Include="Service References\ServiceHelloWorld\HelloWorld.xsd">
       <SubType>Designer</SubType>
@@ -195,6 +254,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="scripts\ContactInfo.js" />
+    <Content Include="scripts\jquery-ui-1.12.1.js" />
+    <Content Include="scripts\jquery-ui-1.12.1.min.js" />
     <None Include="Service References\ServiceEntityLookup\EntityLookupService.disco" />
     <None Include="Service References\ServiceEntityLookup\configuration91.svcinfo" />
     <None Include="Service References\ServiceEntityLookup\configuration.svcinfo" />
@@ -320,6 +382,13 @@
     </Compile>
     <Compile Include="Admin\InstructorFolder\InstructorDetails.aspx.designer.cs">
       <DependentUpon>InstructorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorFitnessClassAdmin.aspx.cs">
+      <DependentUpon>InstructorFitnessClassAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorFitnessClassAdmin.aspx.designer.cs">
+      <DependentUpon>InstructorFitnessClassAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\InstructorFolder\InstructorForm.aspx.cs">
       <DependentUpon>InstructorForm.aspx</DependentUpon>

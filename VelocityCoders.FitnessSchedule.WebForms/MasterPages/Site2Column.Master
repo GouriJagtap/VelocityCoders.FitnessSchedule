@@ -8,6 +8,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script type="text/javascript" src="/scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui-1.12.1.min.js"></script>
+    <link rel="stylesheet" href="/Content/themes/base/jquery-ui.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -28,7 +31,7 @@
                 <div id="NavigationContainerContent">
                     <ul>
                         <li runat="server" id="Instructor">
-                            <a href="/Admin/InstructorFolder/InstructorList.aspx"> Instructor </a>
+                            <a href="/Admin/InstructorFolder/InstructorFitnessClassAdmin.aspx"> Instructor </a>
                         </li>
                         <li runat="server" id="GymLocation">
                             <a href="/Admin/GymLocationArea/"> Gym Location</a>
