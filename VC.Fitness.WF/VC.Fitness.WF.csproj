@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7628FD87-BDC9-46E9-9199-02F10C5D2B69}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VelocityCoders.FitnessSchedule.WebForms</RootNamespace>
+    <AssemblyName>VC.Fitness.WF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="VelocityCoders.LotteryGame.WebForms">
+      <HintPath>..\..\..\LotteryGame\VelocityCoders.LotteryGame\VelocityCoders.LotteryGame.WebForms\bin\VelocityCoders.LotteryGame.WebForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminInput.aspx" />
+    <Content Include="Admin\EmailDetails.aspx" />
+    <Content Include="Admin\EmailList.aspx" />
+    <Content Include="Admin\EntityTypeDetails.aspx" />
+    <Content Include="Admin\EntityTypeList.aspx" />
+    <Content Include="Admin\FitnessClassArea\Default.aspx" />
+    <Content Include="Admin\FitnessCLassDetails.aspx" />
+    <Content Include="Admin\FitnessClassList.aspx" />
+    <Content Include="Admin\GymLocationArea\Default.aspx" />
+    <Content Include="Admin\GymLocationArea\GymList.aspx" />
+    <Content Include="Admin\GymLocationArea\GymManage.aspx" />
+    <Content Include="Admin\GymLocationArea\GymTest.aspx" />
+    <Content Include="Admin\InstructorFolder\ContactInfo.aspx" />
+    <Content Include="Admin\InstructorFolder\Index.aspx" />
+    <Content Include="Admin\InstructorFolder\InstructorDetails.aspx" />
+    <Content Include="Admin\InstructorFolder\InstructorFitnessClassAdmin.aspx" />
+    <Content Include="Admin\InstructorFolder\InstructorForm.aspx" />
+    <Content Include="Admin\InstructorFolder\InstructorList.aspx" />
+    <Content Include="Admin\InstructorList.aspx" />
+    <Content Include="Admin\LookupTablesArea\Default.aspx" />
+    <Content Include="Admin\LookupTablesArea\EntityLookup.aspx" />
+    <Content Include="Admin\LookupTablesArea\EntityTypeLookup.aspx" />
+    <Content Include="Admin\PersonDetails.aspx" />
+    <Content Include="Admin\PersonList.aspx" />
+    <Content Include="Admin\ScheduleArea\Default.aspx" />
+    <Content Include="App_Themes\Images\background-banner.jpg" />
+    <Content Include="App_Themes\Images\header-logo.png" />
+    <Content Include="App_Themes\Theme\FormControls.css" />
+    <Content Include="App_Themes\Theme\main.css" />
+    <Content Include="App_Themes\Theme\Theme.css" />
+    <Content Include="App_Themes\Theme\Validation.css" />
+    <Content Include="ArrayExample.aspx" />
+    <Content Include="ConditiolanStatements.aspx" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="D-04-Instance-vs-Static-LAB.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="HelloWorld.js" />
+    <Content Include="HTMLIntro.aspx" />
+    <Content Include="Images\Agates.jpg" />
+    <Content Include="Images\header-logo.png" />
+    <Content Include="App_Themes\Theme\jquery-ui.css" />
+    <Content Include="LoopsExample.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MasterPages\Site2Column.Master" />
+    <Content Include="jquery-ui-themes-1.10.2.zip" />
+    <None Include="Properties\PublishProfiles\DeploytoC.pubxml" />
+    <None Include="scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="scripts\InstructorFitnessClassAdmin.js" />
+    <Content Include="scripts\InstructorForm.js" />
+    <Content Include="scripts\JavaScript.js" />
+    <Content Include="scripts\jquery-3.1.1.js" />
+    <Content Include="scripts\jquery-3.1.1.min.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.1.1.min.map" />
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.wsdl" />
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessSchedule.WebForms.ServiceEntityLookup.EntityTypeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.wsdl" />
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceHelloWorld\HelloWorld1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="HelloWorld.aspx" />
+    <Content Include="HelloWorld1.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.disco" />
+    <None Include="Service References\ServiceHelloWorld\configuration91.svcinfo" />
+    <None Include="Service References\ServiceHelloWorld\configuration.svcinfo" />
+    <None Include="Service References\ServiceHelloWorld\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="scripts\ContactInfo.js" />
+    <Content Include="scripts\jquery-ui-1.12.1.js" />
+    <Content Include="scripts\jquery-ui-1.12.1.min.js" />
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.disco" />
+    <None Include="Service References\ServiceEntityLookup\configuration91.svcinfo" />
+    <None Include="Service References\ServiceEntityLookup\configuration.svcinfo" />
+    <None Include="Service References\ServiceEntityLookup\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceExample.aspx" />
+    <Content Include="StringTest.aspx" />
+    <Content Include="TemperatureConversion.aspx" />
+    <Content Include="Thanks.aspx" />
+    <Content Include="UserControls\GymLocationNavigationControl.ascx" />
+    <Content Include="UserControls\InstructionNavigationControl.ascx" />
+    <Content Include="UserControls\LookupTablesNavigationControl.ascx" />
+    <Content Include="UserControls\MessageBrokenRulesControl.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminInput.aspx.cs">
+      <DependentUpon>AdminInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminInput.aspx.designer.cs">
+      <DependentUpon>AdminInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EmailDetails.aspx.cs">
+      <DependentUpon>EmailDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EmailDetails.aspx.designer.cs">
+      <DependentUpon>EmailDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EmailList.aspx.cs">
+      <DependentUpon>EmailList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EmailList.aspx.designer.cs">
+      <DependentUpon>EmailList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EntityTypeDetails.aspx.cs">
+      <DependentUpon>EntityTypeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EntityTypeDetails.aspx.designer.cs">
+      <DependentUpon>EntityTypeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EntityTypeList.aspx.cs">
+      <DependentUpon>EntityTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EntityTypeList.aspx.designer.cs">
+      <DependentUpon>EntityTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FitnessClassArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FitnessClassArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FitnessCLassDetails.aspx.cs">
+      <DependentUpon>FitnessCLassDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FitnessCLassDetails.aspx.designer.cs">
+      <DependentUpon>FitnessCLassDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FitnessClassList.aspx.cs">
+      <DependentUpon>FitnessClassList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FitnessClassList.aspx.designer.cs">
+      <DependentUpon>FitnessClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\GymList.aspx.cs">
+      <DependentUpon>GymList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\GymList.aspx.designer.cs">
+      <DependentUpon>GymList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\GymManage.aspx.cs">
+      <DependentUpon>GymManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\GymManage.aspx.designer.cs">
+      <DependentUpon>GymManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\GymTest.aspx.cs">
+      <DependentUpon>GymTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\GymTest.aspx.designer.cs">
+      <DependentUpon>GymTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\ContactInfo.aspx.cs">
+      <DependentUpon>ContactInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\ContactInfo.aspx.designer.cs">
+      <DependentUpon>ContactInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorDetails.aspx.cs">
+      <DependentUpon>InstructorDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorDetails.aspx.designer.cs">
+      <DependentUpon>InstructorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorFitnessClassAdmin.aspx.cs">
+      <DependentUpon>InstructorFitnessClassAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorFitnessClassAdmin.aspx.designer.cs">
+      <DependentUpon>InstructorFitnessClassAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorForm.aspx.cs">
+      <DependentUpon>InstructorForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorForm.aspx.designer.cs">
+      <DependentUpon>InstructorForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorList.aspx.cs">
+      <DependentUpon>InstructorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorFolder\InstructorList.aspx.designer.cs">
+      <DependentUpon>InstructorList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorList.aspx.cs">
+      <DependentUpon>InstructorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorList.aspx.designer.cs">
+      <DependentUpon>InstructorList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityLookup.aspx.cs">
+      <DependentUpon>EntityLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityLookup.aspx.designer.cs">
+      <DependentUpon>EntityLookup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityTypeLookup.aspx.cs">
+      <DependentUpon>EntityTypeLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityTypeLookup.aspx.designer.cs">
+      <DependentUpon>EntityTypeLookup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PersonDetails.aspx.cs">
+      <DependentUpon>PersonDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PersonDetails.aspx.designer.cs">
+      <DependentUpon>PersonDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PersonList.aspx.cs">
+      <DependentUpon>PersonList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PersonList.aspx.designer.cs">
+      <DependentUpon>PersonList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ScheduleArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ScheduleArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArrayExample.aspx.cs">
+      <DependentUpon>ArrayExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArrayExample.aspx.designer.cs">
+      <DependentUpon>ArrayExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConditiolanStatements.aspx.cs">
+      <DependentUpon>ConditiolanStatements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConditiolanStatements.aspx.designer.cs">
+      <DependentUpon>ConditiolanStatements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Custom\Utilities.cs" />
+    <Compile Include="D-04-Instance-vs-Static-LAB.aspx.cs">
+      <DependentUpon>D-04-Instance-vs-Static-LAB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D-04-Instance-vs-Static-LAB.aspx.designer.cs">
+      <DependentUpon>D-04-Instance-vs-Static-LAB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\Enum.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Enums\GymEnum.cs" />
+    <Compile Include="Enums\MasterNavigation.cs" />
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HelloWorld.aspx.cs">
+      <DependentUpon>HelloWorld.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelloWorld.aspx.designer.cs">
+      <DependentUpon>HelloWorld.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HelloWorld1.aspx.cs">
+      <DependentUpon>HelloWorld1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelloWorld1.aspx.designer.cs">
+      <DependentUpon>HelloWorld1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HTMLIntro.aspx.cs">
+      <DependentUpon>HTMLIntro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLIntro.aspx.designer.cs">
+      <DependentUpon>HTMLIntro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoopsExample.aspx.cs">
+      <DependentUpon>LoopsExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoopsExample.aspx.designer.cs">
+      <DependentUpon>LoopsExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Site2Column.Master.cs">
+      <DependentUpon>Site2Column.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Site2Column.Master.designer.cs">
+      <DependentUpon>Site2Column.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GymDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceEntityLookup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceHelloWorld\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceExample.aspx.cs">
+      <DependentUpon>ServiceExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceExample.aspx.designer.cs">
+      <DependentUpon>ServiceExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StringTest.aspx.cs">
+      <DependentUpon>StringTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StringTest.aspx.designer.cs">
+      <DependentUpon>StringTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TemperatureConversion.aspx.cs">
+      <DependentUpon>TemperatureConversion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemperatureConversion.aspx.designer.cs">
+      <DependentUpon>TemperatureConversion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Thanks.aspx.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Thanks.aspx.designer.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GymLocationNavigationControl.ascx.cs">
+      <DependentUpon>GymLocationNavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GymLocationNavigationControl.ascx.designer.cs">
+      <DependentUpon>GymLocationNavigationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InstructionNavigationControl.ascx.cs">
+      <DependentUpon>InstructionNavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\InstructionNavigationControl.ascx.designer.cs">
+      <DependentUpon>InstructionNavigationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LookupTablesNavigationControl.ascx.cs">
+      <DependentUpon>LookupTablesNavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LookupTablesNavigationControl.ascx.designer.cs">
+      <DependentUpon>LookupTablesNavigationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageBrokenRulesControl.ascx.cs">
+      <DependentUpon>MessageBrokenRulesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessageBrokenRulesControl.ascx.designer.cs">
+      <DependentUpon>MessageBrokenRulesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\Main\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jagtap.Common\Jagtap.Common.csproj">
+      <Project>{aacf6da2-8bb4-4620-840a-e622a78ebd41}</Project>
+      <Name>Jagtap.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VC.Fitness.BLL\VC.Fitness.BLL.csproj">
+      <Project>{57f26fc4-b3e1-476d-b9ce-e0c29f6c857c}</Project>
+      <Name>VC.Fitness.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VC.Fitness.DAL\VC.Fitness.DAL.csproj">
+      <Project>{befc9ab0-882c-47f0-9275-1d3e207f528d}</Project>
+      <Name>VC.Fitness.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VC.Fitness.Models\VC.Fitness.Models.csproj">
+      <Project>{b4c25311-4121-45ce-b175-70cdf01f4e52}</Project>
+      <Name>VC.Fitness.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceEntityLookup\" />
+    <WCFMetadataStorage Include="Service References\ServiceHelloWorld\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52169</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52169/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
